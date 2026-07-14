@@ -279,19 +279,19 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Darian doesn\'t just write code — he absorbs the entire system in days and starts shipping by the end of the week. He took our payments module from stalled to production-ready faster than anyone I\'ve seen. He doesn\'t need hand-holding; he needs a problem.',
-    author: 'Ted Lee',
-    role: 'CTO of Fintech Platform',
+      'Darian doesn\'t just write code — he absorbs the entire system in days and starts shipping by the end of the week. He doesn\'t need hand-holding; he needs a problem. Give him something nobody else can figure out, and he\'ll come back with a working solution.',
+    author: 'Ted Lee - CTO',
+    role: 'Fintech Platform',
   },
   {
     quote:
-      'I\'ve worked with a lot of engineers over the years. Most are good at one thing. Darian is the rare one who is equally at home wiring PLCs to cameras, orchestrating LLM pipelines, and debugging a Node.js service at 2am. He genuinely loves the craft — and it shows in every pull request.',
+      'In an understaffed startup where each developer juggled two or three projects at once, Darian never blinked. Desktop, mobile, web, reverse engineering, hardware integration — he handled whatever came across his desk and shipped it. He thrives in chaos and somehow always delivers.',
     author: 'Engineering Manager',
     role: 'NovaCircuit',
   },
   {
     quote:
-      'When we needed someone to bridge hardware, AI, and web — all under a tight deadline — Darian was the only person we trusted. He delivered a 280-camera vision system, an AI expert-matching platform, and a high-concurrency lottery backend without breaking a sweat. He\'s not just versatile — he\'s the person you call when the problem seems impossible.',
+      'Darian is the rare engineer who can bridge hardware, AI, and full-stack web without missing a beat. He picks up new stacks faster than most people pick up new tools. When the problem seems impossible, he\'s the person you call.',
     author: 'CTO',
     role: 'NeuralBridge',
   },

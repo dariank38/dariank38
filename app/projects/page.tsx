@@ -51,6 +51,12 @@ export default function ProjectsPage() {
               <p className="mt-4 text-lg text-muted-foreground">
                 {projectHighlights.length} projects across AI, fintech, e-commerce, computer vision, blockchain, and enterprise systems.
               </p>
+              <div className="mt-6 flex items-start justify-center gap-2 rounded-xl border border-amber-200/50 bg-amber-100/30 px-4 py-3 text-left dark:border-amber-950/15 dark:bg-amber-950/10">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-amber-700 dark:text-amber-600" />
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  This is a curated selection. Many projects are under NDA and can&apos;t be listed here, and some older work predates this portfolio. The full experience timeline is available on the <Link href="/resume" className="font-medium text-amber-700 underline-offset-2 hover:underline dark:text-amber-600">resume page</Link>.
+                </p>
+              </div>
             </div>
           </BlurFade>
         </Container>
@@ -195,16 +201,6 @@ export default function ProjectsPage() {
                 </div>
               </div>
             ))}
-
-            {/* NDA note */}
-            <BlurFade className="mx-auto max-w-2xl" yOffset={20}>
-              <div className="flex items-start gap-3 rounded-2xl border border-amber-200/50 bg-amber-100/30 p-5 dark:border-amber-950/15 dark:bg-amber-950/10">
-                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-amber-700 dark:text-amber-600" />
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  This is a curated selection. Many projects are under NDA and can&apos;t be listed here, and some older work predates this portfolio. The full experience timeline is available on the resume page.
-                </p>
-              </div>
-            </BlurFade>
 
             {/* CTA */}
             <BlurFade className="mx-auto max-w-xl text-center" yOffset={20}>
