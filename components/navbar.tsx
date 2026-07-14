@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -37,9 +38,15 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors hover:text-amber-700 dark:hover:text-amber-700"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-600 to-amber-700 text-sm font-bold text-white shadow-sm">
-            DK
-          </span>
+          <Image
+            src="/favicon.png"
+            alt={SITE_CONFIG.name}
+            width={32}
+            height={32}
+            loading="eager"
+            className="rounded-lg shadow-sm"
+            style={{ width: 32, height: 32 }}
+          />
           <span className="hidden sm:inline">{SITE_CONFIG.name}</span>
         </Link>
 

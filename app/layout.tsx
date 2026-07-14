@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.name} | ${SITE_CONFIG.title}`,
   description: SITE_CONFIG.summary,
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: `${SITE_CONFIG.name} — ${SITE_CONFIG.title}`,
     description: SITE_CONFIG.summary,
@@ -38,7 +43,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <ThemeProvider defaultTheme="system" enableSystem attribute="class">
+        <ThemeProvider defaultTheme="dark" enableSystem attribute="class">
           <Navbar />
           <main className="flex-1 pt-16">{children}</main>
           <Footer />
