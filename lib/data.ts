@@ -171,7 +171,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Frontend',
-    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'Solid.js', 'Webpack', 'Chakra UI', 'shadcn/ui', 'MUI', 'Material Design', 'Ant Design', 'Framework7', 'CLADD', 'HTML/CSS', 'Angular'],
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'Solid.js', 'Webpack', 'Chakra UI', 'shadcn/ui', 'MUI', 'Material Design', 'Ant Design', 'CLADD', 'HTML/CSS', 'Angular'],
   },
   {
     category: 'Cloud & Infra',
@@ -187,7 +187,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Mobile',
-    skills: ['Android (Java, Kotlin)', 'iOS (Swift)', 'React Native', 'Cocos2D', 'Cordova', 'Ionic', 'PhoneGap'],
+    skills: ['Android (Java, Kotlin)', 'iOS (Swift)', 'React Native', 'Cocos2D', 'Cordova', 'Ionic', 'PhoneGap', 'Framework7'],
   },
   {
     category: 'Foundations',
