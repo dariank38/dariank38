@@ -1,0 +1,93 @@
+AI Platform & Systems (2022–Present)
+AI Expert Marketplace Platform
+Built an end-to-end platform that matches vetted AI experts with clients — the core challenge
+being trust and relevance at scale, solved entirely through AI.
+Multi-model expert evaluation engine Designed a LangChain-orchestrated pipeline that routes
+expert profiles across multiple open-source models (LLaMA, Mistral) and proprietary APIs (GPT,
+Gemini) for parallel evaluation. Each model assesses different dimensions — technical depth,
+domain specificity, communication clarity — and results are aggregated into a structured scoring
+rubric. The multi-model approach was deliberate: no single model consistently outperformed
+across all expert types, so ensemble scoring significantly reduced evaluation blind spots.
+Fraud detection & ID verification system The hardest problem on the platform — fake credentials
+and profile manipulation are sophisticated and varied. Built a hybrid detection pipeline: LLM-based
+document and profile analysis to catch semantic inconsistencies (e.g. credential dates that don't
+add up, descriptions that pattern-match known fabrications), layered with ML anomaly detection
+models trained on behavioral signals (account creation patterns, edit history, response timing). This
+two-layer approach catches both obvious fraud and subtle edge cases that rule-based systems
+miss entirely.
+Semantic expert–client matching engine Replaced keyword-based search with a RAG-powered
+matching system using vector embeddings (Pinecone / Weaviate). Client requirements are
+embedded and matched against expert profiles by semantic similarity — capturing intent and
+context rather than surface-level keyword overlap. Result: matches that reflect what clients actually
+need, not just what they typed.
+End-to-end ownership Designed system architecture, built backend APIs, implemented AI pipelines,
+delivered frontend UX, and deployed on AWS. Sole AI engineer for the platform's core intelligence
+layer.
+AI Book Writing Assistant
+
+
+
+Designed multi-stage prompt pipelines (outline generation → structured drafting → revision
+loops) using GPT and Gemini APIs to automate long-form content production.
+Key challenge: maintaining narrative consistency and authorial voice across chapter
+boundaries — solved through context window management and stateful prompt chaining.
+Delivered as a full-stack product integrated with React and WordPress.
+Real-Time Crypto Analytics Platform (BubbleMap-style)
+
+
+
+Engineered a live blockchain data visualization engine with sub-second update latency on
+on-chain data streams.
+Applied unsupervised anomaly detection to flag unusual wallet clustering and transaction
+velocity patterns — surfacing signals that are invisible in standard charting tools.
+Stack: Node.js, WebSocket, React, D3.js.
+MindAI SwapBot — AI-Powered Telegram Bot
+
+Built an LLM-driven Telegram bot that interprets natural language swap requests and
+executes on-chain transactions.
+
+Designed intent-parsing pipelines that handle ambiguous user inputs gracefully — critical
+for financial actions where misinterpretation has real consequences.
+Security Management System
+
+Built a digital asset access control system with ML-based behavioral anomaly detection —
+flags access pattern deviations before they escalate to breaches.
+Full-Stack Engineering Foundation (2019–2022)
+
+The systems below are included to show production-scale engineering depth — all were high
+complexity, high-stakes builds that inform the reliability and architecture decisions in AI work.
+Digital payment platform (Alipay-scale): Designed secure transaction flows, multi-party
+settlement logic, and scalable backend services for web and mobile.
+
+
+
+E-commerce ecosystem (Alibaba-style): Full order lifecycle, vendor management, inventory,
+and payment integration across multiple storefronts.
+License plate recognition system: Computer vision pipeline integrated with physical gate
+controls — automated access based on real-time vehicle identification.
+Enterprise management platforms: Restaurant operations, shopping mall management,
+subscription content delivery.
+Software Engineer — NovaCircuit
+October 2015– February 2019
+
+
+
+
+
+Built an endpoint monitoring solution with screen recording, keystroke tracking, and
+behavioral anomaly detection — an early application of ML-adjacent pattern recognition for
+enterprise security.
+Implemented a CAPTCHA recognition system using image processing — one of the earlier
+ML-adjacent projects before the current AI wave.
+Developed web and desktop video conferencing systems (Node.js, MongoDB, WebRTC).
+Delivered Binance Android App v1.0 (early-stage, Upwork).
+Developed HWP 5.0 document parsing module for LibreOffice.
+Software Developer Intern — KOAST
+December 2014– September 2015
+
+
+Built a 3D modeling tool integrated with Autodesk Revit.
+Ported SWF-based games to Cocos2D for Android and iOS.
+
+Education
+Bachelor of Computer Science James Cook University, Singapore · 2011–2014
