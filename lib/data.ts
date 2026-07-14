@@ -167,11 +167,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Node.js', 'Django', 'Flask', 'FastAPI', 'Web2Py', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java', 'Rust', 'WordPress'],
+    skills: ['Python', 'Node.js', 'Django', 'Flask', 'FastAPI', 'Web2Py', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java', 'Rust', 'WordPress', 'Wix', 'Shopify', 'Ruby', 'Liquid'],
   },
   {
     category: 'Frontend',
-    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'Solid.js', 'Webpack', 'MUI', 'Ant Design', 'HTML/CSS', 'Angular'],
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'Solid.js', 'Webpack', 'Chakra UI', 'shadcn/ui', 'MUI', 'Material Design', 'Ant Design', 'Framework7', 'CLADD', 'HTML/CSS', 'Angular'],
   },
   {
     category: 'Cloud & Infra',
