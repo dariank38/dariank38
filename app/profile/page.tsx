@@ -7,8 +7,13 @@ import { Badge } from '@/components/ui/badge'
 import { psychometricTraits, psychometricSummary, mbtiData } from '@/lib/data'
 
 export const metadata = {
-  title: 'Profile | Darian King',
-  description: 'Psychometric profile from Snaphunt and MBTI personality type from 16Personalities.',
+  title: 'Profile',
+  description: 'Psychometric profile from Snaphunt and MBTI personality type (ENFJ-T) from 16Personalities — Darian King\'s working style and traits.',
+  alternates: { canonical: '/profile' },
+  openGraph: {
+    title: 'Profile | Darian King',
+    description: 'Psychometric profile from Snaphunt and MBTI personality type (ENFJ-T) from 16Personalities — Darian King\'s working style and traits.',
+  },
 }
 
 const traitIcons = [Brain, Target, Users, TrendingUp]

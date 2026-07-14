@@ -8,8 +8,13 @@ import { Container } from '@/components/container'
 import { blogPosts } from '@/lib/data'
 
 export const metadata = {
-  title: 'Blog | Darian King',
-  description: 'Project notes, stories, and ideas.',
+  title: 'Blog',
+  description: 'Project write-ups, career stories, and lessons learned from decades in the trenches — by Darian King, Software Engineer.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Blog | Darian King',
+    description: 'Project write-ups, career stories, and lessons learned from decades in the trenches — by Darian King, Software Engineer.',
+  },
 }
 
 function estimateReadTime(text: string) {

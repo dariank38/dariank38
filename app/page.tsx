@@ -44,6 +44,19 @@ const projectIcons: Record<string, React.ElementType> = {
   'file-text': FileText,
 }
 
+export const metadata = {
+  title: {
+    absolute: 'Darian King | Software Engineer — AI, Full-Stack & Windows Programming',
+  },
+  description: 'Darian King is a software engineer specializing in AI engineering, full-stack development, and Windows programming. From LLM orchestration to Alibaba-scale payments to computer vision systems.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Darian King | Software Engineer — AI, Full-Stack & Windows Programming',
+    description: 'Darian King is a software engineer specializing in AI engineering, full-stack development, and Windows programming. From LLM orchestration to Alibaba-scale payments to computer vision systems.',
+    type: 'website',
+  },
+}
+
 export default function HomePage() {
   return (
     <>

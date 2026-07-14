@@ -8,8 +8,13 @@ import { MagicCard } from '@/components/magicui/magic-card'
 import { storyParagraphs, storyTitle } from '@/lib/data'
 
 export const metadata = {
-  title: 'My Story | Darian King',
-  description: 'The full personal journey from Windows 95 to AI.',
+  title: 'My Story',
+  description: 'The full personal journey from Windows 95 to AI — how Darian King became the developer he is today.',
+  alternates: { canonical: '/story' },
+  openGraph: {
+    title: 'My Story | Darian King',
+    description: 'The full personal journey from Windows 95 to AI — how Darian King became the developer he is today.',
+  },
 }
 
 const keyMoments = [

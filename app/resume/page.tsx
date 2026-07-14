@@ -14,8 +14,13 @@ import { SITE_CONFIG } from '@/lib/constants'
 const skillIcons = [Code, Brain, Network, Cpu, Terminal, Layers, Cloud, Database, Blocks, Smartphone, Wrench]
 
 export const metadata = {
-  title: 'Resume | Darian King',
-  description: 'Experience, skills, and career highlights.',
+  title: 'Resume',
+  description: 'Experience, skills, and career highlights of Darian King — Software Engineer specializing in AI, full-stack, and Windows programming.',
+  alternates: { canonical: '/resume' },
+  openGraph: {
+    title: 'Resume | Darian King',
+    description: 'Experience, skills, and career highlights of Darian King — Software Engineer specializing in AI, full-stack, and Windows programming.',
+  },
 }
 
 export default function ResumePage() {

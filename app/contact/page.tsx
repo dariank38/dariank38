@@ -6,8 +6,13 @@ import { Container } from '@/components/container'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export const metadata = {
-  title: 'Contact | Darian King',
-  description: `Get in touch with ${SITE_CONFIG.name}.`,
+  title: 'Contact',
+  description: `Get in touch with ${SITE_CONFIG.name} — software engineer specializing in AI, full-stack, and Windows programming. Every conversation starts with a simple hello.`,
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: `Contact | ${SITE_CONFIG.name}`,
+    description: `Get in touch with ${SITE_CONFIG.name} — software engineer specializing in AI, full-stack, and Windows programming.`,
+  },
 }
 
 const contactLinks = [

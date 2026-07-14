@@ -20,8 +20,21 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     const post = blogPosts.find((p) => p.slug === resolvedParams.slug)
     if (!post) return { title: 'Post not found' }
     return {
-      title: `${post.title} | Darian King`,
+      title: post.title,
       description: post.excerpt,
+      alternates: { canonical: `/blog/${post.slug}` },
+      openGraph: {
+        type: 'article',
+        title: `${post.title} | Darian King`,
+        description: post.excerpt,
+        publishedTime: post.date,
+        tags: post.tags,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${post.title} | Darian King`,
+        description: post.excerpt,
+      },
     }
   })
 }
