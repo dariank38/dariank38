@@ -22,12 +22,12 @@ export function Timeline({ items }: TimelineProps) {
           transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' as const }}
           className="relative pl-8 md:pl-12"
         >
-          <span className="absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background bg-gradient-to-br from-amber-400 to-orange-500 md:top-1.5 md:h-8 md:w-8" />
+          <span className="absolute left-0 top-2 h-6 w-6 rounded-full border-4 border-background bg-gradient-to-br from-amber-600 to-amber-700 md:top-1.5 md:h-8 md:w-8" />
           <MagicCard className="border-l-4 border-l-amber-400/60 transition-all hover:shadow-md">
             <CardHeader className="pb-2">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <CardTitle className="text-xl">{item.title}</CardTitle>
-                <Badge variant="secondary" className="w-fit bg-amber-100/60 text-amber-800 dark:bg-amber-900/20 dark:text-amber-400">
+                <Badge variant="secondary" className="w-fit bg-amber-100/60 text-amber-900 dark:bg-amber-950/20 dark:text-amber-600">
                   {item.period}
                 </Badge>
               </div>

@@ -19,17 +19,17 @@ export function Hero() {
   const totalSkills = skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-amber-50/60 via-background to-background dark:from-amber-950/10 dark:via-background dark:to-background">
+    <section className="relative overflow-hidden bg-gradient-to-b from-amber-100/50 via-background to-background dark:from-amber-950/10 dark:via-background dark:to-background">
       <div className="pointer-events-none absolute inset-0 bg-aurora opacity-50" />
-      <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-amber-300/20 blur-3xl dark:bg-amber-600/10" />
+      <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-amber-600/15 blur-3xl dark:bg-amber-800/10" />
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-rose-300/20 blur-3xl dark:bg-rose-600/10" />
 
       <Container className="relative z-10 flex flex-col items-center justify-center py-24 text-center md:py-36">
         <BlurFade delay={0.05} className="inline-flex">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/50 bg-amber-100/70 px-4 py-1.5 text-sm font-medium text-amber-800 backdrop-blur-sm dark:border-amber-700/30 dark:bg-amber-900/20 dark:text-amber-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-100/70 px-4 py-1.5 text-sm font-medium text-amber-900 backdrop-blur-sm dark:border-amber-800/30 dark:bg-amber-950/20 dark:text-amber-600">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-700 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-700" />
             </span>
             Available for new opportunities
           </div>
@@ -51,13 +51,13 @@ export function Hero() {
         </BlurFade>
 
         <BlurFade delay={0.6} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button asChild size="lg" className="rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 text-white shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40 hover:brightness-110">
+          <Button asChild size="lg" className="rounded-full bg-gradient-to-r from-amber-700 to-amber-700 px-8 text-white shadow-lg shadow-amber-500/25 transition-all hover:shadow-amber-500/40 hover:brightness-110">
             <Link href="/story">
               Read my story
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="rounded-full border-amber-300/60 px-8 text-amber-700 hover:bg-amber-100/50 dark:border-amber-700/30 dark:text-amber-400 dark:hover:bg-amber-900/20">
+          <Button asChild variant="outline" size="lg" className="rounded-full border-amber-400/60 px-8 text-amber-800 hover:bg-amber-100/50 dark:border-amber-800/30 dark:text-amber-600 dark:hover:bg-amber-900/20">
             <Link href="/contact">Let&apos;s talk</Link>
           </Button>
         </BlurFade>
@@ -65,7 +65,7 @@ export function Hero() {
         <BlurFade delay={0.75} className="mt-8 flex flex-wrap items-center justify-center gap-6">
           {trustBadges.map((badge) => (
             <div key={badge.label} className="flex items-center gap-2 text-sm text-muted-foreground">
-              <badge.icon className="h-4 w-4 text-amber-500" />
+              <badge.icon className="h-4 w-4 text-amber-700" />
               {badge.label}
             </div>
           ))}
@@ -93,11 +93,11 @@ export function Hero() {
         </BlurFade>
 
         <BlurFade delay={1.05} className="mt-16 max-w-2xl">
-          <blockquote className="rounded-2xl border border-amber-300/40 bg-amber-50/60 p-6 text-left shadow-sm dark:border-amber-800/20 dark:bg-amber-950/10">
+          <blockquote className="rounded-2xl border border-amber-400/40 bg-amber-100/50 p-6 text-left shadow-sm dark:border-amber-900/20 dark:bg-amber-950/20">
             <p className="text-sm italic leading-relaxed text-muted-foreground sm:text-base">
               &ldquo;{testimonials[0].quote}&rdquo;
             </p>
-            <footer className="mt-3 text-xs font-medium text-amber-700 dark:text-amber-400">
+            <footer className="mt-3 text-xs font-medium text-amber-800 dark:text-amber-600">
               — {testimonials[0].author}, {testimonials[0].role}
             </footer>
           </blockquote>

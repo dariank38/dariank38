@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/story', label: 'Story' },
   { href: '/resume', label: 'Resume' },
+  { href: '/profile', label: 'Profile' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -25,26 +26,26 @@ export function Navbar() {
     cn(
       'rounded-full px-4 py-2 text-sm font-medium transition-all',
       active
-        ? 'bg-amber-100/80 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+        ? 'bg-amber-100/80 text-amber-800 dark:bg-amber-950/30 dark:text-amber-600'
         : 'text-muted-foreground hover:text-foreground hover:bg-amber-100/40 dark:hover:bg-amber-900/15'
     )
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-amber-200/40 bg-background/70 backdrop-blur-xl dark:border-amber-800/15">
+    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-amber-200/50 bg-background/70 backdrop-blur-xl dark:border-amber-950/15">
       <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors hover:text-amber-600 dark:hover:text-amber-400"
+          className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-colors hover:text-amber-700 dark:hover:text-amber-700"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-sm font-bold text-white shadow-sm">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-amber-600 to-amber-700 text-sm font-bold text-white shadow-sm">
             DK
           </span>
           <span className="hidden sm:inline">{SITE_CONFIG.name}</span>
         </Link>
 
-        <ul className="hidden items-center gap-1 rounded-full border border-amber-200/50 bg-surface/60 p-1 backdrop-blur-md dark:border-amber-800/15 md:flex">
+        <ul className="hidden items-center gap-1 rounded-full border border-amber-200/50 bg-surface/60 p-1 backdrop-blur-md dark:border-amber-950/15 md:flex">
           {navLinks.map((link) => {
-            const active = normalized === link.href
+            const active = link.href === '/' ? normalized === '/' : normalized.startsWith(link.href)
             return (
               <li key={link.href}>
                 <Link href={link.href} className={linkClass(active)}>
@@ -69,7 +70,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-72">
               <div className="mt-8 flex flex-col gap-2">
                 {navLinks.map((link) => {
-                  const active = normalized === link.href
+                  const active = link.href === '/' ? normalized === '/' : normalized.startsWith(link.href)
                   return (
                     <SheetClose key={link.href} asChild>
                       <Link

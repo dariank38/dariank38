@@ -23,7 +23,7 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className={cn('py-20 md:py-28', className)} {...props}>
+    <section className={cn('py-10', className)} {...props}>
       <Container>
         {(title || subtitle || eyebrow) && (
           <BlurFade
@@ -34,7 +34,7 @@ export function Section({
             yOffset={20}
           >
             {eyebrow && (
-              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-600">
                 {eyebrow}
               </p>
             )}

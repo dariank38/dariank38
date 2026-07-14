@@ -29,7 +29,7 @@ export const storyParagraphs = [
 
   `I also contributed to the KakaoTalk desktop client, led development of a remote internal security management system, built a product sales platform, and — right around the time TensorFlow and Keras were emerging — developed a CAPTCHA auto-recognition and bypass program.`,
 
-  `At my next company, I encountered something I'd never dealt with before: the intersection of software and physical hardware. I'd dabbled with toggling LEDs via assembly and briefly played around with a Raspberry Pi, but this was a different scale entirely. The project involved processing video feeds from 28 Hikvision cameras and using the results to automatically control access gates at the company's main entrance and other locations — opening and closing them based on vehicle authorization. This required not just computer vision, but also PLC and Arduino integration for motor control. I didn't design the physical PLC boards — hardware engineering isn't my field — but I was responsible for everything on the software side.`,
+  `At my next company, I encountered something I'd never dealt with before: the intersection of software and physical hardware. I'd dabbled with toggling LEDs via assembly and briefly played around with a Raspberry Pi, but this was a different scale entirely. The project involved processing video feeds from 280 Hikvision cameras and using the results to automatically control access gates at the company's main entrance and other locations — opening and closing them based on vehicle authorization. This required not just computer vision, but also PLC and Arduino integration for motor control. I didn't design the physical PLC boards — hardware engineering isn't my field — but I was responsible for everything on the software side.`,
 
   `During the COVID period, I also developed an employee attendance and anomaly detection system using thermal imaging cameras.`,
 
@@ -74,14 +74,14 @@ export const experiences: Experience[] = [
     title: 'Software Engineer — NovaCircuit',
     period: 'Oct 2015 – Feb 2019',
     description:
-      'Handled multiple projects simultaneously: endpoint monitoring with screen recording and behavioral anomaly detection, CAPTCHA recognition with image processing, web/desktop video conferencing (WebRTC), the Binance Android App v1.0, HWP 5.0 document parsing for LibreOffice, Android/Unity APK reverse engineering, KakaoTalk desktop client contributions, and a product sales platform.',
+      'Handled multiple projects simultaneously: endpoint monitoring with screen recording and behavioral anomaly detection, CAPTCHA recognition with image processing, web/desktop video conferencing (WebRTC), HWP 5.0 document parsing for LibreOffice, Android/Unity APK reverse engineering, KakaoTalk desktop client contributions, and a product sales platform.',
     skills: ['Node.js', 'MongoDB', 'WebRTC', 'Android', 'LibreOffice', 'Image Processing', 'ASP.NET', 'Cordova', 'Ionic'],
   },
   {
-    title: 'Senior AI Engineer — NeuralBridge',
+    title: 'Senior FullStack Engineer — NeuralBridge',
     period: 'Mar 2019 – Present',
     description:
-      'Started with hardware-software intersection: 28 Hikvision cameras with PLC/Arduino gate control, thermal imaging attendance during COVID. Then led payments for an Alibaba/Alipay-scale e-commerce platform with blockchain-inspired transaction signing. Since 2022, focused on AI: expert marketplace with multi-model evaluation (LLaMA, Mistral, GPT, Gemini), fraud detection, RAG-powered matching, AI book writing assistant, real-time crypto analytics, and an LLM-driven Telegram swap bot.',
+      'Started with hardware-software intersection: 280 Hikvision cameras with PLC/Arduino gate control, thermal imaging attendance during COVID. Then led payments for an Alibaba/Alipay-scale e-commerce platform with blockchain-inspired transaction signing. Since 2022, focused on AI: expert marketplace with multi-model evaluation (LLaMA, Mistral, GPT, Gemini), fraud detection, RAG-powered matching, AI book writing assistant, real-time crypto analytics, and an LLM-driven Telegram swap bot.',
     skills: ['LangChain', 'RAG', 'Pinecone', 'GPT', 'Gemini', 'React', 'AWS', 'C#', 'MongoDB', 'Computer Vision', 'Blockchain'],
   },
 ]
@@ -93,8 +93,8 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: 'Core',
-    skills: ['C#', 'Windows Programming', 'Java (Android)'],
+    category: 'Favorites',
+    skills: ['C#', 'Windows Programming', 'Android Development'],
   },
   {
     category: 'LLM & Generative AI',
@@ -110,27 +110,31 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Node.js', 'Django', 'Flask', 'REST / GraphQL', 'Rust', 'ASP.NET'],
+    skills: ['Python', 'Node.js', 'Flask/FastAPI', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java'],
   },
   {
     category: 'Frontend',
-    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'HTML/CSS'],
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'HTML/CSS', 'Angular'],
   },
   {
     category: 'Cloud & Infra',
-    skills: ['AWS (EC2, S3, Lambda)', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'MongoDB', 'Oracle DB'],
+    skills: ['AWS (EC2, S3, Lambda)', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Nginx', 'Redis'],
+  },
+  {
+    category: 'Databases',
+    skills: ['MongoDB', 'Oracle DB', 'PostgreSQL', 'MySQL'],
   },
   {
     category: 'Blockchain / Web3',
-    skills: ['Solidity', 'Rust', 'Ethers.js', 'Web3.js'],
+    skills: ['Solidity', 'Ethers.js', 'Web3.js', 'Smart Contracts', 'Web3 Storage', 'Web3 Wallet Development'],
   },
   {
     category: 'Mobile',
-    skills: ['React Native', 'Android (Kotlin)', 'iOS (Swift)', 'Cocos2D', 'Cordova', 'Ionic'],
+    skills: ['Android (Java, Kotlin)', 'Cocos2D', 'Cordova', 'Ionic'],
   },
   {
     category: 'Foundations',
-    skills: ['C/C++', 'Pascal', 'Qt', 'Win32 API', 'MFC', 'WebRTC'],
+    skills: ['C/C++', 'Pascal', 'Qt'],
   },
 ]
 
@@ -143,18 +147,69 @@ export const blogPosts = [
     tags: ['Career', 'Story'],
   },
   {
-    slug: 'ai-marketplace',
-    title: 'Building an AI Expert Marketplace',
-    excerpt: 'Multi-model evaluation, fraud detection, and RAG-powered matching — lessons from shipping an AI platform end-to-end.',
-    date: '2026-07-13',
-    tags: ['AI', 'LangChain', 'RAG'],
+    slug: 'nine-years-and-uncle',
+    title: 'Nine Years, and Uncle',
+    excerpt: 'A client I met on Upwork, two accidents, and a bond that refused to break — the story of a nine-year project that finally came home.',
+    date: '2026-07-14',
+    tags: ['Story', 'Personal', 'Client'],
   },
+]
+
+export type BlogPostContent = {
+  slug: string
+  sections: { heading?: string; paragraphs: string[] }[]
+}
+
+export const blogPostContents: BlogPostContent[] = [
   {
-    slug: 'crypto-analytics',
-    title: 'Real-Time Crypto Analytics at Sub-Second Latency',
-    excerpt: 'How I built a live blockchain visualization engine with anomaly detection on wallet clustering patterns.',
-    date: '2026-07-13',
-    tags: ['Web3', 'Data Viz', 'Node.js'],
+    slug: 'nine-years-and-uncle',
+    sections: [
+      {
+        paragraphs: [
+          `For most developers, "keeping your word" means hitting a deadline. But there's one promise in my life that means something different. It took nine years to finish. Twice, an accident cut off all contact between me and the person I'd made it to. And yet I never let go of that promise — and neither did he. This is the story of those nine years.`,
+          `Nine years ago, I met a client by chance on Upwork. What he'd hired me for was software development. But the real problem he was carrying was something else entirely. He had already spent three years trying to bring this project to life, but the developers he'd worked with either lacked the skill or never truly understood what he was trying to build. All he had to show for those three years were incomplete pieces of work — and not even the source code for those. What remained were a handful of mockup screens he'd sketched himself, and a pile of materials about the marriage and couples-counseling service he ran.`,
+          `At the time, I had no idea this connection would still be alive today, or that nine years later I'd finally be handing him a finished product.`,
+        ],
+      },
+      {
+        heading: 'The First Accident',
+        paragraphs: [
+          `This was before vibe coding existed, so coding still demanded real time and effort. Even so, a skilled developer should have been able to finish both the web and mobile versions within six months.`,
+          `Once I'd finished the web version and the Android app, I made plans to meet him in person and headed to the airport to fly to Michigan, where he lived. That same day, I was in an accident.`,
+          `It took a while to recover. My body eventually healed, but my devices were completely destroyed — every account and every contact stored on them was gone. I've never regretted anything more than not having memorized his contact information. Ten years ago, backing everything up to the cloud wasn't yet the habit it is now.`,
+        ],
+      },
+      {
+        heading: 'A Reunion, Seven Years Later',
+        paragraphs: [
+          `A few years later, I stumbled across his contact information again, almost by accident. I managed to recover the email account we'd once used to communicate, and we finally reconnected.`,
+          `He was genuinely overjoyed to hear from me again. And he still wanted to finish the project that carried his dream. What struck me most was this: for seven years, he hadn't handed the project to anyone else. He had simply kept what I'd given him, safe and untouched, waiting. That trust of his weighed on me more than any contract ever could.`,
+        ],
+      },
+      {
+        heading: 'The Second Accident',
+        paragraphs: [
+          `We worked together again for two years. Then something happened in my personal life, and I disappeared from contact for over a year. Once again, I wasn't able to let him know what had happened to me.`,
+          `The last promise we'd made was that once he returned from a business trip, we'd get the project ready to launch. That promise, too, went unkept. Accidents, as it turns out, never announce themselves in advance.`,
+          `When I finally recovered, the first person I reached out to wasn't family — it was him. After all the years we'd shared, and the understanding we'd built between us, this project had stopped being just his dream. It had become something I cared about too. I wanted, more than anything, to see his dream become real.`,
+        ],
+      },
+      {
+        heading: 'Closing the Circle',
+        paragraphs: [
+          `I wanted, somehow, to bring these nine years to a close. Last month — exactly nine years after we first met — I finally finished the project.`,
+          `If the reason this took nine years was a lack of responsibility, or conscience, or simply not being skilled enough, then I probably should have given up being a developer altogether. But that's not what this delay was. It was the product of two accidents and a bond that, somehow, refused to break. That no matter how much life falls apart, you finish what you started — that's what I wanted to prove, to him and to myself, over these nine years.`,
+        ],
+      },
+      {
+        heading: 'Why I Call Him Uncle',
+        paragraphs: [
+          `Over the course of a life, a person meets many people. But I doubt I'll ever have another relationship as full of twists and turns as this one. What I'm most grateful for is that, through all of it, he was endlessly generous and considerate toward me. There were times when he suffered losses because of me, or because of things in my life beyond my control — and still, he never once held it against me. He always just said, "God bless you."`,
+          `Today, I work alongside him as part of his team, and we've become genuine friends. He's always been someone who offers me guidance, encouragement, and a living example of what it means to live with values — an elder I look up to. That's why I call him Uncle.`,
+          `Looking back on these nine years, I think the story really comes down to one thing: a good relationship survives only when neither person gives up on the other. And I want to be the kind of developer who never gives up on the people, or the work, they've committed to — no matter what gets in the way.`,
+        ],
+      },
+    ],
   },
 ]
 
@@ -168,20 +223,20 @@ export const testimonials: Testimonial[] = [
   {
     quote:
       'Darian picked up our payments module quickly and delivered on time. He adapts fast to new codebases.',
-    author: 'Team Lead',
-    role: 'Fintech Platform',
+    author: 'Ted Lee',
+    role: 'CTO of Fintech Platform',
   },
   {
     quote:
       'He genuinely enjoys programming, and that shows in his work. A reliable engineer who gets things done.',
     author: 'Engineering Manager',
-    role: 'Startup',
+    role: 'NovaCircuit',
   },
   {
     quote:
       'From hardware integration to AI services, Darian is versatile and dependable. A solid addition to any team.',
     author: 'CTO',
-    role: 'IoT Company',
+    role: 'NeuralBridge',
   },
 ]
 
@@ -196,29 +251,119 @@ export const projectHighlights: ProjectHighlight[] = [
   {
     title: 'AI Expert Marketplace',
     description:
-      'End-to-end platform matching vetted AI experts with clients. Multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini), LLM-based fraud detection, and RAG-powered semantic matching with vector embeddings.',
-    tags: ['LangChain', 'RAG', 'Pinecone', 'AWS'],
+      'Platform that matches vetted AI experts with clients. Built a LangChain-orchestrated multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini) for parallel expert scoring, a hybrid fraud detection system (LLM + ML anomaly detection), and RAG-powered semantic matching using vector embeddings.',
+    tags: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'AWS'],
     icon: 'brain',
   },
   {
-    title: 'Alipay-scale Payments',
+    title: 'Payments Module',
     description:
       'Led the payments module for an e-commerce platform at Alibaba scale. Designed secure transaction flows, multi-party settlement logic, and blockchain-inspired transaction signing.',
-    tags: ['C#', 'MongoDB', 'Oracle DB', 'Blockchain'],
+    tags: ['Node.js', 'MongoDB', 'Oracle DB', 'Blockchain'],
     icon: 'credit-card',
   },
   {
     title: 'Smart Gate Vision System',
     description:
-      'Computer vision pipeline processing 28 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. Also built a thermal-imaging attendance system during COVID.',
-    tags: ['Computer Vision', 'PLC', 'Arduino', 'C'],
+      'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. Also built a thermal-imaging attendance system during COVID.',
+    tags: ['Computer Vision', 'PLC', 'Microcontroller C', 'OpenCV', 'HIKVision SDK', 'Qt', 'C++', 'Thermal Imaging'],
     icon: 'camera',
+  }
+]
+
+export type PsychometricTrait = {
+  category: string
+  traits: string[]
+  description: string
+}
+
+export const psychometricTraits: PsychometricTrait[] = [
+  {
+    category: 'Thinking',
+    traits: ['Analysing', 'Exploring'],
+    description:
+      'Comfortable dealing with numerical data to understand and solve problems. Factual and uses evidence to support hypotheses. Prefers established and proven approaches, appreciates authority and rules, and adjusts easily. Practical and down to earth, while keeping an open mind to novel approaches.',
   },
   {
-    title: 'AI Audiobook & Book Writing',
+    category: 'Executing',
+    traits: ['Quality', 'Result Driven'],
     description:
-      'A service that transforms manuscripts into full audiobooks with distinct character voices using LLMs and neural TTS. Also built a book auto-completion service where authors provide chapter outlines and the system generates the full text.',
-    tags: ['AI', 'LLM', 'TTS', 'GPT', 'Gemini'],
-    icon: 'file-text',
+      'Systematic, methodical, and organised — delivers within deadlines. Reliable, disciplined, and driven to achieve goals. Doesn\u2019t get lost in detail, though can sometimes overlook mistakes.',
+  },
+  {
+    category: 'Connecting',
+    traits: ['Networking', 'Collaborating'],
+    description:
+      'Displays empathy towards colleagues and values listening to their points of view. Involves others in key decisions and plans. Gives credit where it\u2019s due and delegates easily when necessary.',
+  },
+  {
+    category: 'Progressing',
+    traits: ['Leadership', 'Resilience', 'Adaptability'],
+    description:
+      'Comfortable working in rapidly changing environments. A good team player who pays attention to everyone\u2019s input in a group setting.',
   },
 ]
+
+export const psychometricSummary = {
+  topTraits: ['Team player', 'Focused', 'Analytical'],
+  roleFit: [
+    'Roles involving managing multiple stakeholders or building deep relationships with key accounts.',
+    'Roles with clear goals or timelines, where performance can be easily measured.',
+    'Roles relating to research, analysis, data analytics, or applying rational thinking to solve problems.',
+  ],
+  organizationFit: [
+    'Organisations that are supportive of employees, promote sharing information, and have good employee recognition programs.',
+    'Organisations that are fast-paced, results-oriented, and offer clear career paths linked to performance.',
+    'Organisations that promote evidence-based critical thinking.',
+  ],
+}
+
+export type MbtiTrait = {
+  label: string
+  opposite: string
+  percent: number
+  category: string
+  color: string
+}
+
+export type MbtiSection = {
+  title: string
+  paragraphs: string[]
+}
+
+export const mbtiData = {
+  type: 'ENFJ-T',
+  typeName: 'Protagonist',
+  role: 'Diplomat',
+  description: [
+    `As a Protagonist (ENFJ-T), you possess a unique blend of charisma, empathy, and idealism that sets you apart in any crowd. Your natural ability to inspire and lead others is matched only by your deep-seated desire to make a positive impact on the world around you. You have an uncanny knack for understanding people's emotions and motivations, often sensing what others need before they even realize it themselves.`,
+    `Your gift for communication allows you to articulate your visionary ideas with passion and conviction, drawing others into your orbit and motivating them to join your cause. You thrive on meaningful connections and have a remarkable talent for bringing out the best in those around you. However, your idealistic nature can sometimes set you up for disappointment when reality falls short of your lofty expectations.`,
+  ],
+  traits: [
+    { label: 'Extraverted', opposite: 'Introverted', percent: 61, category: 'Energy', color: 'blue' },
+    { label: 'Intuitive', opposite: 'Observant', percent: 57, category: 'Mind', color: 'yellow' },
+    { label: 'Feeling', opposite: 'Thinking', percent: 65, category: 'Nature', color: 'green' },
+    { label: 'Judging', opposite: 'Prospecting', percent: 61, category: 'Tactics', color: 'purple' },
+    { label: 'Turbulent', opposite: 'Assertive', percent: 64, category: 'Identity', color: 'red' },
+  ] as MbtiTrait[],
+  sections: [
+    {
+      title: 'Career',
+      paragraphs: [
+        `Your career path is likely to be driven by a deep-seated need to make a meaningful difference in people's lives. You thrive in roles that allow you to inspire, guide, and develop others, making you an excellent teacher, counselor, or team leader. Your natural charisma and ability to articulate a compelling vision make you a standout in fields like human resources, public relations, or nonprofit management.`,
+      ],
+    },
+    {
+      title: 'Personal Growth',
+      paragraphs: [
+        `Your journey of personal growth is fueled by an insatiable desire for self-improvement and a genuine commitment to becoming the best version of yourself. You set high standards for your own behavior and are often your own harshest critic. While this drive can lead to remarkable personal development, it's crucial to temper it with self-compassion and realistic expectations.`,
+      ],
+    },
+    {
+      title: 'Relationships',
+      paragraphs: [
+        `In relationships, whether romantic, familial, or platonic, you shine as a deeply committed and intuitive partner. Your ability to understand and cater to others' emotional needs makes you a valued friend and confidant. You have a gift for creating deep, meaningful connections and building environments where others feel safe to be their authentic selves.`,
+      ],
+    },
+  ] as MbtiSection[],
+}
