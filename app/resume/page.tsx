@@ -1,4 +1,4 @@
-import { ArrowRight, Brain, Cloud, Code, Cpu, Layers, Smartphone, Mail, ExternalLink } from 'lucide-react'
+import { ArrowRight, Brain, Cloud, Code, Cpu, Layers, Smartphone, Mail, ExternalLink, Network, Blocks, Terminal, Wrench } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -11,7 +11,7 @@ import { Timeline } from '@/components/timeline'
 import { experiences, skillCategories } from '@/lib/data'
 import { SITE_CONFIG } from '@/lib/constants'
 
-const skillIcons = [Cpu, Code, Layers, Smartphone, Cloud, Brain]
+const skillIcons = [Code, Brain, Network, Cpu, Terminal, Layers, Cloud, Blocks, Smartphone, Wrench]
 
 export const metadata = {
   title: 'Resume | Darian King',
@@ -84,10 +84,12 @@ export default function ResumePage() {
                   Education
                 </h3>
                 <MagicCard className="p-4">
-                  <p className="text-sm font-medium text-foreground">Self-driven, continuous learning</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    Shipping real projects across dozens of stacks and domains. I learn by building, breaking, and rebuilding.
-                  </p>
+                  <p className="text-sm font-medium text-foreground">MSc Computer Science</p>
+                  <p className="text-xs text-muted-foreground">James Cook University, Singapore · 2015–2017</p>
+                  <div className="mt-3 border-t border-amber-200/30 pt-3 dark:border-amber-800/10">
+                    <p className="text-sm font-medium text-foreground">BSc Computer Science</p>
+                    <p className="text-xs text-muted-foreground">James Cook University, Singapore · 2011–2014</p>
+                  </div>
                 </MagicCard>
               </div>
 

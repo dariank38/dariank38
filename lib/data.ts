@@ -60,50 +60,29 @@ export const experiences: Experience[] = [
     title: 'Early Beginnings',
     period: 'Childhood — early teens',
     description:
-      'Started with legacy Windows systems, Pascal, Visual Basic, Delphi, and Flash Script before moving into C/C++, Windows APIs, MFC, and Qt.',
+      'Started with legacy Windows systems (Win95 through Vista), learned Pascal, Visual Basic, Delphi, and Flash Script before moving into C/C++, Windows NT Programming, APIs, MFC, and Qt. Built a VNC-style remote desktop tool as a teenager.',
     skills: ['Pascal', 'Visual Basic', 'C/C++', 'Win32 API', 'MFC', 'Qt'],
   },
   {
-    title: 'First Professional Steps',
-    period: 'Internship',
+    title: 'Software Developer Intern — KOAST',
+    period: 'Dec 2014 – Sep 2015',
     description:
-      'Built Tetris as a new-hire competition, ported SWF Flash games to Cocos2d, survived a power outage that wiped a month of work, and built an offline dictionary for architects using the Autodesk Revit SDK.',
-    skills: ['Cocos2d', 'C/C++', 'Autodesk Revit SDK', 'Corpus Theory'],
+      'First professional assignment: built Tetris for a new-hire competition, ported SWF Flash games to Cocos2D for Android and iOS, built a 3D modeling tool integrated with Autodesk Revit, and developed an offline dictionary app for architects.',
+    skills: ['Cocos2D', 'Autodesk Revit SDK', '3D Modeling', 'Android', 'iOS'],
   },
   {
-    title: 'Startup Polyglot',
-    period: 'Startup years',
+    title: 'Software Engineer — NovaCircuit',
+    period: 'Oct 2015 – Feb 2019',
     description:
-      'Handled multiple projects at once: ASP.NET/IIS/Node.js management systems, WebRTC video conferencing, WinForms clients, Cocos2d/Cocos3d mobile games, Cordova/Ionic hybrid apps, and AWS deployments.',
-    skills: ['ASP.NET', 'Node.js', 'WebRTC', 'WinForms', 'Cocos2d/3d', 'Cordova', 'Ionic', 'AWS', 'AngularJS', 'ReactJS'],
+      'Handled multiple projects simultaneously: endpoint monitoring with screen recording and behavioral anomaly detection, CAPTCHA recognition with image processing, web/desktop video conferencing (WebRTC), the Binance Android App v1.0, HWP 5.0 document parsing for LibreOffice, Android/Unity APK reverse engineering, KakaoTalk desktop client contributions, and a product sales platform.',
+    skills: ['Node.js', 'MongoDB', 'WebRTC', 'Android', 'LibreOffice', 'Image Processing', 'ASP.NET', 'Cordova', 'Ionic'],
   },
   {
-    title: 'Deep Systems & Reverse Engineering',
-    period: 'Mid career',
+    title: 'Senior AI Engineer — NeuralBridge',
+    period: 'Mar 2019 – Present',
     description:
-      'Reverse engineered Android and Unity APKs, led the LibreOffice-based TSolution office suite as PM, contributed to the KakaoTalk desktop client, and built a CAPTCHA auto-recognition system with TensorFlow/Keras.',
-    skills: ['Android Reverse Engineering', 'Unity', 'LibreOffice', 'HWP', 'TensorFlow', 'Keras'],
-  },
-  {
-    title: 'Hardware & Computer Vision',
-    period: 'Computer vision era',
-    description:
-      'Processed video feeds from 28 Hikvision cameras, controlled access gates with PLC/Arduino integration, and built thermal-camera attendance & anomaly detection during COVID.',
-    skills: ['Computer Vision', 'PLC', 'Arduino', 'Hikvision', 'Thermal Imaging'],
-  },
-  {
-    title: 'Scale, Fintech & Blockchain',
-    period: 'Large-scale systems',
-    description:
-      'Led the payments module for an Alibaba/Alipay-scale project, worked with MongoDB and Oracle, and designed blockchain-inspired security for transaction signing.',
-    skills: ['C#', 'Payments', 'MongoDB', 'Oracle DB', 'Blockchain', 'E-commerce'],
-  },
-  {
-    title: 'AI & Web3',
-    period: 'Present',
-    description:
-      'Stayed current with Web3 technologies, and after ChatGPT launched built AI-powered audiobook generation and book auto-completion services.',
-    skills: ['Web3', 'ChatGPT', 'AI/ML', 'Text-to-Speech', 'LLMs'],
+      'Started with hardware-software intersection: 28 Hikvision cameras with PLC/Arduino gate control, thermal imaging attendance during COVID. Then led payments for an Alibaba/Alipay-scale e-commerce platform with blockchain-inspired transaction signing. Since 2022, focused on AI: expert marketplace with multi-model evaluation (LLaMA, Mistral, GPT, Gemini), fraud detection, RAG-powered matching, AI book writing assistant, real-time crypto analytics, and an LLM-driven Telegram swap bot.',
+    skills: ['LangChain', 'RAG', 'Pinecone', 'GPT', 'Gemini', 'React', 'AWS', 'C#', 'MongoDB', 'Computer Vision', 'Blockchain'],
   },
 ]
 
@@ -118,24 +97,40 @@ export const skillCategories: SkillCategory[] = [
     skills: ['C#', 'Windows Programming', 'Java (Android)'],
   },
   {
-    category: 'Languages',
-    skills: ['C/C++', 'Pascal', 'JavaScript', 'TypeScript', 'Python', 'HTML/CSS'],
+    category: 'LLM & Generative AI',
+    skills: ['GPT', 'Gemini', 'LLaMA', 'Mistral', 'Prompt Engineering', 'RAG', 'AI Agents'],
   },
   {
-    category: 'Frameworks',
-    skills: ['React', 'Next.js', 'AngularJS', 'Qt', 'ASP.NET', 'Node.js', 'Cocos2d'],
+    category: 'LLM Orchestration & Search',
+    skills: ['LangChain', 'LlamaIndex', 'Pinecone', 'Weaviate', 'Chroma', 'Embedding Pipelines'],
   },
   {
-    category: 'Mobile',
-    skills: ['Android', 'Cordova', 'Ionic', 'Framework 7', 'Unity'],
+    category: 'ML Engineering',
+    skills: ['Scikit-learn', 'TensorFlow', 'Keras', 'Classification', 'Anomaly Detection', 'Pandas', 'NumPy', 'SciPy'],
+  },
+  {
+    category: 'Backend',
+    skills: ['Python', 'Node.js', 'Django', 'Flask', 'REST / GraphQL', 'Rust', 'ASP.NET'],
+  },
+  {
+    category: 'Frontend',
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'HTML/CSS'],
   },
   {
     category: 'Cloud & Infra',
-    skills: ['AWS', 'IIS', 'Linux', 'Docker', 'Git'],
+    skills: ['AWS (EC2, S3, Lambda)', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'MongoDB', 'Oracle DB'],
   },
   {
-    category: 'AI & Data',
-    skills: ['TensorFlow', 'Keras', 'LLMs', 'Computer Vision', 'PLC/Arduino'],
+    category: 'Blockchain / Web3',
+    skills: ['Solidity', 'Rust', 'Ethers.js', 'Web3.js'],
+  },
+  {
+    category: 'Mobile',
+    skills: ['React Native', 'Android (Kotlin)', 'iOS (Swift)', 'Cocos2D', 'Cordova', 'Ionic'],
+  },
+  {
+    category: 'Foundations',
+    skills: ['C/C++', 'Pascal', 'Qt', 'Win32 API', 'MFC', 'WebRTC'],
   },
 ]
 
@@ -148,18 +143,18 @@ export const blogPosts = [
     tags: ['Career', 'Story'],
   },
   {
-    slug: 'ai-audiobook',
-    title: 'Building an AI Audiobook Service',
-    excerpt: 'How I turned text files into full audiobooks with character voices and LLMs.',
+    slug: 'ai-marketplace',
+    title: 'Building an AI Expert Marketplace',
+    excerpt: 'Multi-model evaluation, fraud detection, and RAG-powered matching — lessons from shipping an AI platform end-to-end.',
     date: '2026-07-13',
-    tags: ['AI', 'Project'],
+    tags: ['AI', 'LangChain', 'RAG'],
   },
   {
-    slug: 'cocos-to-creator',
-    title: 'From Cocos2d to CocosCreator',
-    excerpt: 'Why I stepped away from Cocos in 2019 and what the new tooling taught me.',
+    slug: 'crypto-analytics',
+    title: 'Real-Time Crypto Analytics at Sub-Second Latency',
+    excerpt: 'How I built a live blockchain visualization engine with anomaly detection on wallet clustering patterns.',
     date: '2026-07-13',
-    tags: ['Game Dev', 'Mobile'],
+    tags: ['Web3', 'Data Viz', 'Node.js'],
   },
 ]
 
@@ -172,19 +167,19 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Darian has an uncanny ability to jump into any codebase and start shipping within days. He led our payments module with zero prior domain knowledge and delivered ahead of schedule.',
+      'Darian picked up our payments module quickly and delivered on time. He adapts fast to new codebases.',
     author: 'Team Lead',
     role: 'Fintech Platform',
   },
   {
     quote:
-      'I have never met someone who genuinely loves programming as much as Darian. His passion is contagious — it lifts the entire team.',
+      'He genuinely enjoys programming, and that shows in his work. A reliable engineer who gets things done.',
     author: 'Engineering Manager',
     role: 'Startup',
   },
   {
     quote:
-      'From hardware integration to AI services, Darian simply gets it done. He is the most versatile engineer I have worked with.',
+      'From hardware integration to AI services, Darian is versatile and dependable. A solid addition to any team.',
     author: 'CTO',
     role: 'IoT Company',
   },
@@ -199,31 +194,31 @@ export type ProjectHighlight = {
 
 export const projectHighlights: ProjectHighlight[] = [
   {
-    title: 'AI Audiobook Engine',
+    title: 'AI Expert Marketplace',
     description:
-      'A service that transforms manuscripts into full audiobooks — assigning distinct character voices to dialogue lines using LLMs and neural TTS.',
-    tags: ['AI', 'LLM', 'TTS', 'Python'],
+      'End-to-end platform matching vetted AI experts with clients. Multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini), LLM-based fraud detection, and RAG-powered semantic matching with vector embeddings.',
+    tags: ['LangChain', 'RAG', 'Pinecone', 'AWS'],
     icon: 'brain',
   },
   {
-    title: 'Alibaba-scale Payments',
+    title: 'Alipay-scale Payments',
     description:
-      'Led the payments module for an e-commerce platform comparable to Alibaba + Alipay, with blockchain-inspired transaction signing and MongoDB/Oracle tradeoffs.',
-    tags: ['C#', 'Blockchain', 'MongoDB', 'Oracle'],
+      'Led the payments module for an e-commerce platform at Alibaba scale. Designed secure transaction flows, multi-party settlement logic, and blockchain-inspired transaction signing.',
+    tags: ['C#', 'MongoDB', 'Oracle DB', 'Blockchain'],
     icon: 'credit-card',
   },
   {
     title: 'Smart Gate Vision System',
     description:
-      'Processed live feeds from 28 Hikvision cameras to control physical access gates via PLC/Arduino — computer vision meets the real world.',
+      'Computer vision pipeline processing 28 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. Also built a thermal-imaging attendance system during COVID.',
     tags: ['Computer Vision', 'PLC', 'Arduino', 'C'],
     icon: 'camera',
   },
   {
-    title: 'LibreOffice Office Suite',
+    title: 'AI Audiobook & Book Writing',
     description:
-      'PM and lead developer for TSolution, an office suite built on LibreOffice. Led HWP module development and the main UI across three walls of documentation.',
-    tags: ['C++', 'LibreOffice', 'HWP', 'UI'],
+      'A service that transforms manuscripts into full audiobooks with distinct character voices using LLMs and neural TTS. Also built a book auto-completion service where authors provide chapter outlines and the system generates the full text.',
+    tags: ['AI', 'LLM', 'TTS', 'GPT', 'Gemini'],
     icon: 'file-text',
   },
 ]

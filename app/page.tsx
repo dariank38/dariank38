@@ -13,6 +13,10 @@ import {
   Cloud,
   Quote,
   Zap,
+  Network,
+  Blocks,
+  Terminal,
+  Wrench,
 } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -31,7 +35,7 @@ import {
   testimonials,
 } from '@/lib/data'
 
-const skillIcons = [Cpu, Code, Layers, Smartphone, Cloud, Brain]
+const skillIcons = [Code, Brain, Network, Cpu, Terminal, Layers, Cloud, Blocks, Smartphone, Wrench]
 const projectIcons: Record<string, React.ElementType> = {
   brain: Brain,
   'credit-card': CreditCard,
@@ -113,10 +117,10 @@ export default function HomePage() {
                         <span className="text-xs font-semibold uppercase tracking-wider">Impact</span>
                       </div>
                       <p className="mt-2 text-sm text-muted-foreground">
-                        {index === 0 && 'Transformed a manual publishing workflow into an automated pipeline.'}
-                        {index === 1 && 'Processed transactions at Alibaba-scale with blockchain-inspired security.'}
-                        {index === 2 && 'Connected software to the physical world — 28 cameras, real gates, real vehicles.'}
-                        {index === 3 && 'Shipped a full office suite used in production environments.'}
+                        {index === 0 && 'Multi-model ensemble scoring reduced evaluation blind spots across expert types.'}
+                        {index === 1 && 'Secure transaction flows and multi-party settlement at Alibaba scale.'}
+                        {index === 2 && '28 cameras, real gates, real vehicles — software meeting the physical world.'}
+                        {index === 3 && 'Turned manuscripts into audiobooks and outlines into full books with LLMs.'}
                       </p>
                     </div>
                   </div>
@@ -152,8 +156,8 @@ export default function HomePage() {
                 </Button>
               </MagicCard>
               <div className="rounded-2xl border border-amber-200/40 bg-amber-50/60 p-6 dark:border-amber-800/15 dark:bg-amber-950/10">
-                <p className="text-3xl font-bold text-gradient">20+</p>
-                <p className="mt-1 text-sm text-muted-foreground">Years of building software across every layer of the stack.</p>
+                <p className="text-3xl font-bold text-gradient">10+</p>
+                <p className="mt-1 text-sm text-muted-foreground">Years building software across every layer of the stack.</p>
               </div>
             </div>
           </BlurFade>

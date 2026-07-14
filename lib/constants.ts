@@ -3,7 +3,7 @@ export const BASE_PATH = ''
 export const SITE_CONFIG = {
   name: 'Darian King',
   title: 'Software Engineer',
-  tagline: 'Windows Programming · Java (Android) · FullStack Development',
+  tagline: 'Windows Programming · Java (Android) · FullStack Development · AI Engineering',
   summary:
     'I build software that ships. I enjoy turning ideas into working products, learning new stacks along the way, and solving real problems for real people.',
   email: 'kingransom9411@gmail.com',
