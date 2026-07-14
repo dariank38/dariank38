@@ -51,7 +51,9 @@ export const storyParagraphs = [
 export type Experience = {
   title: string
   period: string
+  company: string
   description: string
+  details: string[]
   skills: string[]
 }
 
@@ -59,30 +61,85 @@ export const experiences: Experience[] = [
   {
     title: 'Early Beginnings',
     period: 'Childhood — early teens',
+    company: 'Self-taught',
     description:
       'Started with legacy Windows systems (Win95 through Vista), learned Pascal, Visual Basic, Delphi, and Flash Script before moving into C/C++, Windows NT Programming, APIs, MFC, and Qt. Built a VNC-style remote desktop tool as a teenager.',
+    details: [
+      'Proficient with every legacy OS from Win95 through Vista',
+      'First language: Pascal — then Visual Basic, Delphi, Flash Script',
+      'Picked up C/C++ at 14, explored Win32 API, MFC, threading, async processing',
+      'Built a VNC-style remote desktop tool using the Windows API',
+      'Cross-platform exploration with Qt/KDE on Fedora',
+    ],
     skills: ['Pascal', 'Visual Basic', 'C/C++', 'Win32 API', 'MFC', 'Qt'],
   },
   {
-    title: 'Software Developer Intern — KOAST',
+    title: 'Software Developer Intern',
     period: 'Dec 2014 – Sep 2015',
+    company: 'KOAST',
     description:
       'First professional assignment: built Tetris for a new-hire competition, ported SWF Flash games to Cocos2D for Android and iOS, built a 3D modeling tool integrated with Autodesk Revit, and developed an offline dictionary app for architects.',
+    details: [
+      'Built Tetris for a new-hire code competition (shortest, most performant code wins)',
+      'Ported SWF Flash games (Mortal Combat, Fighter Flight) to Cocos2D for Android and iOS',
+      'Built a 3D modeling tool integrated with Autodesk Revit SDK',
+      'Developed ArchDic — an offline dictionary of architectural terms',
+      'Learned to work with third-party SDKs and corpus-based dictionary systems',
+    ],
     skills: ['Cocos2D', 'Autodesk Revit SDK', '3D Modeling', 'Android', 'iOS'],
   },
   {
-    title: 'Software Engineer — NovaCircuit',
+    title: 'Software Engineer',
     period: 'Oct 2015 – Feb 2019',
+    company: 'NovaCircuit',
     description:
-      'Handled multiple projects simultaneously: endpoint monitoring with screen recording and behavioral anomaly detection, CAPTCHA recognition with image processing, web/desktop video conferencing (WebRTC), HWP 5.0 document parsing for LibreOffice, Android/Unity APK reverse engineering, KakaoTalk desktop client contributions, and a product sales platform.',
-    skills: ['Node.js', 'MongoDB', 'WebRTC', 'Android', 'LibreOffice', 'Image Processing', 'ASP.NET', 'Cordova', 'Ionic'],
+      'Handled multiple projects simultaneously in an understaffed startup: endpoint monitoring with behavioral anomaly detection, CAPTCHA recognition, web/desktop video conferencing (WebRTC), HWP 5.0 document parsing for LibreOffice, Android/Unity APK reverse engineering, KakaoTalk desktop client, and a product sales platform.',
+    details: [
+      'Built MR Eye — endpoint monitoring with screen recording, keystroke tracking, and behavioral anomaly detection',
+      'Implemented CAPTCHA recognition system using TensorFlow and image processing',
+      'Engineered MeetUp — Windows desktop video conferencing with real-time audio/video streaming',
+      'Developed web-based video conferencing system (Node.js, MongoDB, WebRTC)',
+      'Built desktop chat application for KakaoTalk with messaging automation',
+      'Developed HWP 5.0 document parsing module for LibreOffice (TSolution project)',
+      'Performed Android APK reverse engineering (native + Unity 4.x–5.6)',
+      'Built Sales Management System and Internal Management System for company operations',
+    ],
+    skills: ['Node.js', 'MongoDB', 'WebRTC', 'Android', 'LibreOffice', 'TensorFlow', 'Image Processing', 'ASP.NET', 'Cordova', 'Ionic'],
   },
   {
-    title: 'Senior FullStack Engineer — NeuralBridge',
-    period: 'Mar 2019 – Present',
+    title: 'Senior Full-Stack Engineer',
+    period: 'Mar 2019 – 2022',
+    company: 'NeuralBridge',
     description:
-      'Started with hardware-software intersection: 280 Hikvision cameras with PLC/Arduino gate control, thermal imaging attendance during COVID. Then led payments for an Alibaba/Alipay-scale e-commerce platform with blockchain-inspired transaction signing. Since 2022, focused on AI: expert marketplace with multi-model evaluation (LLaMA, Mistral, GPT, Gemini), fraud detection, RAG-powered matching, AI book writing assistant, real-time crypto analytics, and an LLM-driven Telegram swap bot.',
-    skills: ['LangChain', 'RAG', 'Pinecone', 'GPT', 'Gemini', 'React', 'AWS', 'C#', 'MongoDB', 'Computer Vision', 'Blockchain'],
+      'Full-stack engineering at scale: digital payment platform (Alipay-level), e-commerce ecosystem (Alibaba-level), license plate recognition with physical gate control, and enterprise management platforms for restaurants and shopping malls.',
+    details: [
+      'Architected MR Pay — digital payment platform similar to Alipay with secure transaction flows and multi-party settlement logic',
+      'Built MR Bay — full-scale e-commerce ecosystem comparable to Alibaba (order processing, vendor management, payment integration)',
+      'Designed and launched DialogueDaily — relationship and marriage counseling platform with content delivery and subscription workflows',
+      'Built StrongGate — license plate recognition system with 280 Hikvision cameras, PLC/Arduino gate control, and thermal imaging attendance during COVID',
+      'Delivered Reshoper — Restaurant & Shopping Mall Management Platform (web + app) and desktop-based restaurant management software',
+    ],
+    skills: ['Node.js', 'MongoDB', 'Oracle DB', 'Computer Vision', 'PLC', 'Arduino', 'C#', 'React', 'AWS', 'Blockchain'],
+  },
+  {
+    title: 'Senior AI Engineer',
+    period: '2022 – Present',
+    company: 'NeuralBridge',
+    description:
+      'Focused on AI since 2022: multi-model expert evaluation marketplace, RAG-powered semantic matching, hybrid fraud detection, AI book writing assistant, real-time crypto analytics, LLM-driven Telegram swap bot, AI audiobook generator, and AI character generation platform.',
+    details: [
+      'Built Supakon — AI expert marketplace with LangChain-orchestrated multi-model evaluation (LLaMA, Mistral, GPT, Gemini) for parallel expert scoring, hybrid fraud detection (LLM + ML anomaly detection), and RAG-powered semantic matching (Pinecone/Weaviate)',
+      'Developed Author Wizard — AI book writing assistant with multi-stage prompt pipelines (outline → drafting → revision) using GPT and Gemini, integrated with React and WordPress',
+      'Built Audie.ai — AI audiobook generation platform integrating ElevenLabs APIs with WordPress',
+      'Engineered HindSight — real-time crypto analytics platform (BubbleMap-style) with sub-second latency, WebSocket streaming, and unsupervised anomaly detection (Node.js, React, D3.js)',
+      'Built MindAI SwapBot — LLM-driven Telegram bot interpreting natural language swap requests and executing on-chain transactions with intent-parsing pipelines',
+      'Developed Lust AI — AI character generation and chat platform with image generation (pose/style controls) and conversational AI companions (v4.9, powered by SPICE)',
+      'Built MR USBLock — digital asset access control system with ML-based behavioral anomaly detection',
+      'Built MemoLabs — BRC-20 inscription platform and airdrop point system',
+      'Built Drive3 — Web3 decentralized storage platform',
+      'Designed contact information aggregation system (automation and scraping)',
+    ],
+    skills: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'LLaMA', 'Mistral', 'React', 'AWS', 'Blockchain', 'WebSocket', 'D3.js', 'ElevenLabs'],
   },
 ]
 
@@ -94,7 +151,7 @@ export type SkillCategory = {
 export const skillCategories: SkillCategory[] = [
   {
     category: 'Favorites',
-    skills: ['C#', 'Windows Programming', 'Android Development'],
+    skills: ['C#', 'Windows Programming', 'Android Development', 'WordPress'],
   },
   {
     category: 'LLM & Generative AI',
@@ -110,15 +167,15 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Node.js', 'Flask/FastAPI', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java'],
+    skills: ['Python', 'Node.js', 'Django', 'Flask', 'FastAPI', 'Web2Py', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java', 'Rust', 'WordPress'],
   },
   {
     category: 'Frontend',
-    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'HTML/CSS', 'Angular'],
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vite', 'Svelte', 'Solid.js', 'Webpack', 'MUI', 'Ant Design', 'HTML/CSS', 'Angular'],
   },
   {
     category: 'Cloud & Infra',
-    skills: ['AWS (EC2, S3, Lambda)', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Nginx', 'Redis'],
+    skills: ['AWS (EC2, S3, Lambda)', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Nginx', 'Redis', 'Supabase'],
   },
   {
     category: 'Databases',
@@ -126,15 +183,15 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Blockchain / Web3',
-    skills: ['Solidity', 'Ethers.js', 'Web3.js', 'Smart Contracts', 'Web3 Storage', 'Web3 Wallet Development'],
+    skills: ['Solidity', 'Ethers.js', 'Web3.js', 'Polkadot.js', 'Smart Contracts', 'Web3 Storage', 'Web3 Wallet Development'],
   },
   {
     category: 'Mobile',
-    skills: ['Android (Java, Kotlin)', 'Cocos2D', 'Cordova', 'Ionic'],
+    skills: ['Android (Java, Kotlin)', 'iOS (Swift)', 'React Native', 'Cocos2D', 'Cordova', 'Ionic', 'PhoneGap'],
   },
   {
     category: 'Foundations',
-    skills: ['C/C++', 'Pascal', 'Qt'],
+    skills: ['C/C++', 'Pascal', 'Qt', 'Win32 API', 'MFC'],
   },
 ]
 
@@ -222,19 +279,19 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Darian picked up our payments module quickly and delivered on time. He adapts fast to new codebases.',
+      'Darian doesn\'t just write code — he absorbs the entire system in days and starts shipping by the end of the week. He took our payments module from stalled to production-ready faster than anyone I\'ve seen. He doesn\'t need hand-holding; he needs a problem.',
     author: 'Ted Lee',
     role: 'CTO of Fintech Platform',
   },
   {
     quote:
-      'He genuinely enjoys programming, and that shows in his work. A reliable engineer who gets things done.',
+      'I\'ve worked with a lot of engineers over the years. Most are good at one thing. Darian is the rare one who is equally at home wiring PLCs to cameras, orchestrating LLM pipelines, and debugging a Node.js service at 2am. He genuinely loves the craft — and it shows in every pull request.',
     author: 'Engineering Manager',
     role: 'NovaCircuit',
   },
   {
     quote:
-      'From hardware integration to AI services, Darian is versatile and dependable. A solid addition to any team.',
+      'When we needed someone to bridge hardware, AI, and web — all under a tight deadline — Darian was the only person we trusted. He delivered a 280-camera vision system, an AI expert-matching platform, and a high-concurrency lottery backend without breaking a sweat. He\'s not just versatile — he\'s the person you call when the problem seems impossible.',
     author: 'CTO',
     role: 'NeuralBridge',
   },
@@ -245,30 +302,223 @@ export type ProjectHighlight = {
   description: string
   tags: string[]
   icon: string
+  company: string
+  url?: string
+  image?: string
+  challenge?: string
+  solution?: string
+  techniques?: string[]
 }
 
 export const projectHighlights: ProjectHighlight[] = [
   {
-    title: 'AI Expert Marketplace',
+    title: 'Supakon',
     description:
-      'Platform that matches vetted AI experts with clients. Built a LangChain-orchestrated multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini) for parallel expert scoring, a hybrid fraud detection system (LLM + ML anomaly detection), and RAG-powered semantic matching using vector embeddings.',
-    tags: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'AWS'],
+      'Enterprise-grade AI expert matching platform connecting organizations with pre-vetted AI specialists. LangChain-orchestrated multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini) for parallel expert scoring across technical depth, domain specificity, and communication clarity. Hybrid fraud detection (LLM + ML anomaly detection) and RAG-powered semantic matching using vector embeddings.',
+    tags: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'LLaMA', 'Mistral', 'AWS', 'Python', 'Next.js', 'TypeScript'],
     icon: 'brain',
+    company: 'NeuralBridge',
+    url: 'https://supakon.com',
+    image: '/projects/supakon.jpg',
+    challenge: 'Trust and relevance at scale — how do you verify that an "AI expert" is actually an expert, and match them to the right project without manual review?',
+    solution: 'Built a LangChain-orchestrated pipeline where 4 models (LLaMA, Mistral, GPT, Gemini) evaluate each candidate in parallel across different dimensions. Hybrid fraud detection layers LLM semantic analysis with ML anomaly detection to catch inconsistencies rule-based systems miss. RAG-powered matching via Pinecone/Weaviate replaced keyword search entirely.',
+    techniques: ['Multi-model ensemble scoring', 'LangChain chain orchestration', 'RAG with Pinecone & Weaviate', 'Hybrid fraud detection (LLM + ML)', 'Parallel async evaluation pipelines'],
   },
   {
-    title: 'Payments Module',
+    title: 'MR Pay',
     description:
-      'Led the payments module for an e-commerce platform at Alibaba scale. Designed secure transaction flows, multi-party settlement logic, and blockchain-inspired transaction signing.',
+      'Digital payment platform similar to Alipay. Designed secure transaction flows, multi-party settlement logic, and scalable backend services for web and mobile. Blockchain-inspired transaction signing for payment security.',
     tags: ['Node.js', 'MongoDB', 'Oracle DB', 'Blockchain'],
     icon: 'credit-card',
+    company: 'NeuralBridge',
+    image: '/projects/mr-pay.jpg',
+    challenge: 'Building a payment platform at Alipay scale — handling secure transactions, multi-party settlement, and preventing double-spending without a distributed ledger.',
+    solution: 'Designed blockchain-inspired transaction signing where every transaction gets a cryptographic signature. Multi-party settlement logic handles vendor splits, refunds, and escrow. Built scalable backend services supporting both web and mobile clients.',
+    techniques: ['Blockchain-inspired transaction signing', 'Multi-party settlement logic', 'Cryptographic transaction verification', 'Scalable payment architecture'],
   },
   {
-    title: 'Smart Gate Vision System',
+    title: 'MR Bay',
     description:
-      'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. Also built a thermal-imaging attendance system during COVID.',
-    tags: ['Computer Vision', 'PLC', 'Microcontroller C', 'OpenCV', 'HIKVision SDK', 'Qt', 'C++', 'Thermal Imaging'],
+      'Full-scale e-commerce ecosystem comparable to Alibaba. Order processing, vendor management, inventory, and payment integration across multiple storefronts.',
+    tags: ['React', 'Node.js', 'MongoDB', 'AWS'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    image: '/projects/mr-bay.jpg',
+    challenge: 'Building an e-commerce platform at Alibaba scale — order processing, vendor management, inventory tracking, and payment integration across multiple storefronts with real traffic.',
+    solution: 'Architected a full-stack ecosystem with React frontend, Node.js backend, and MongoDB. Integrated MR Pay for payment processing. Every component had to handle real traffic at real volume — no staging environment luxury.',
+    techniques: ['Multi-storefront architecture', 'Real-time inventory management', 'Vendor management system', 'Payment integration with MR Pay'],
+  },
+  {
+    title: 'StrongGate',
+    description:
+      'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. YOLO-based object detection and OpenCV image processing for license plate recognition. Also built a thermal-imaging attendance system during COVID.',
+    tags: ['Computer Vision', 'YOLO', 'OpenCV', 'TensorFlow', 'Face Detection', 'Object Detection', 'PLC', 'Arduino', 'HIKVision SDK', 'C++'],
     icon: 'camera',
-  }
+    company: 'NeuralBridge',
+    image: '/projects/stronggate.jpg',
+    challenge: '280 Hikvision cameras feeding live video to control physical access gates. Every gate open/close cycle had to be reliable — software failures meant real vehicles stuck at real gates. License plate recognition had to work in varying lighting, weather, and angles.',
+    solution: 'Built a YOLO-based object detection pipeline for vehicle detection, OpenCV for license plate recognition, and face detection for driver verification. PLC/Arduino integration handles physical gate control with fail-safe defaults. Thermal imaging extension during COVID added body temperature screening on top of access control.',
+    techniques: ['YOLO object detection for vehicles', 'OpenCV license plate recognition', 'Face detection for driver verification', 'PLC/Arduino gate control with fail-safe', 'Thermal imaging anomaly detection'],
+  },
+  {
+    title: 'Author Wizard',
+    description:
+      'AI book writing assistant with multi-stage prompt pipelines (outline generation → structured drafting → revision loops) using GPT and Gemini. Maintains narrative consistency across chapters through context window management and stateful prompt chaining.',
+    tags: ['GPT', 'Gemini', 'React', 'WordPress', 'Prompt Engineering'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    url: 'https://bookwiz.io',
+    image: '/projects/author-wizard.jpg',
+    challenge: 'AI-generated long-form content loses narrative consistency across chapters. Context windows can\'t hold an entire book, so earlier plot points get forgotten, characters drift, and themes fragment.',
+    solution: 'Multi-stage prompt pipeline: outline generation first, then structured drafting chapter-by-chapter, then revision loops. Stateful prompt chaining carries key narrative elements (character states, plot threads, themes) forward across chapters. Context window management ensures the AI always has the right context at the right stage.',
+    techniques: ['Multi-stage prompt pipelines (outline → draft → revise)', 'Stateful prompt chaining across chapters', 'Context window management', 'GPT + Gemini dual-model workflow', 'WordPress integration for publishing'],
+  },
+  {
+    title: 'Audie.ai',
+    description:
+      'AI audiobook generation platform. Authors load books as text files, assign character voices to dialogue lines, and automatically generate complete audiobooks. Integrates ElevenLabs APIs with WordPress.',
+    tags: ['ElevenLabs', 'WordPress', 'AI', 'Audio'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    url: 'https://audie.ai',
+    image: '/projects/audie-ai.jpg',
+    challenge: 'Converting books to audiobooks is expensive and slow. Authors need a way to assign different voices to different characters, handle narration vs dialogue, and generate hours of audio without manual recording.',
+    solution: 'Built a platform where authors upload text files, map character names to ElevenLabs voices, and the system automatically detects dialogue lines and assigns the right voice. Narration gets a separate narrator voice. WordPress integration handles publishing and distribution.',
+    techniques: ['ElevenLabs API integration for voice synthesis', 'Dialogue detection and character voice mapping', 'Automated audio generation pipeline', 'WordPress publishing integration'],
+  },
+  {
+    title: 'HindSight',
+    description:
+      'Real-time cryptocurrency analytics platform (BubbleMap-style) with sub-second update latency on on-chain data streams. Unsupervised anomaly detection flags unusual wallet clustering and transaction velocity patterns.',
+    tags: ['Node.js', 'WebSocket', 'React', 'D3.js', 'Anomaly Detection'],
+    icon: 'brain',
+    company: 'NeuralBridge',
+    url: 'https://hindsight.vip',
+    image: '/projects/hindsight.jpg',
+    challenge: 'On-chain data moves fast — thousands of transactions per second across multiple chains. Visualizing this in real-time with sub-second latency while also detecting anomalies requires a carefully engineered pipeline.',
+    solution: 'WebSocket streaming pipeline with Node.js backend processing live on-chain data. D3.js-powered BubbleMap visualization renders wallet clusters and transaction flows in real-time. Unsupervised anomaly detection runs alongside, flagging unusual wallet clustering and transaction velocity patterns invisible in standard charting tools.',
+    techniques: ['WebSocket streaming for sub-second updates', 'Unsupervised anomaly detection on transaction patterns', 'D3.js BubbleMap visualization', 'Real-time on-chain data processing'],
+  },
+  {
+    title: 'Lust AI',
+    description:
+      'AI character generation and chat platform with image generation (pose/style controls) and conversational AI companions. Powered by SPICE AI tools, currently at v4.9.',
+    tags: ['AI', 'Image Generation', 'Chat', 'React', 'SPICE'],
+    icon: 'brain',
+    company: 'NeuralBridge',
+    url: 'https://lustai.app',
+    challenge: 'Building an AI platform that generates consistent character images across different poses and styles while maintaining coherent multi-turn conversations.',
+    solution: 'Integrated SPICE AI tools for image generation with pose and style controls. Conversational AI companions maintain context across sessions. Scaled to v4.9 with active users.',
+    techniques: ['SPICE AI image generation', 'Pose and style control pipelines', 'Multi-turn conversational AI', 'Character consistency across generations'],
+  },
+  {
+    title: 'MindAI SwapBot',
+    description:
+      'LLM-driven Telegram bot that interprets natural language swap requests and executes on-chain transactions. Intent-parsing pipelines handle ambiguous user inputs gracefully — critical for financial actions where misinterpretation has real consequences.',
+    tags: ['LLM', 'Telegram', 'Blockchain', 'Web3', 'Intent Parsing'],
+    icon: 'brain',
+    company: 'NeuralBridge',
+    image: '/projects/mindai-swapbot.jpg',
+    challenge: 'Users describe swap requests in natural language — "swap 100 USDC for ETH" — but phrasing varies wildly. Misinterpreting a financial transaction has real monetary consequences.',
+    solution: 'LLM-driven intent parsing pipeline that normalizes natural language into structured swap parameters. Ambiguous inputs trigger clarification prompts rather than executing wrong trades. On-chain transaction execution with confirmation callbacks.',
+    techniques: ['LLM intent parsing for natural language swaps', 'Ambiguity detection with clarification prompts', 'On-chain transaction execution', 'Telegram bot integration'],
+  },
+  {
+    title: 'DialogueDaily',
+    description:
+      'Relationship and marriage counseling platform with content delivery and subscription workflows. The nine-year project — started on Upwork, survived two accidents, and finally delivered.',
+    tags: ['React', 'Node.js', 'Subscription', 'Content Delivery'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    url: 'https://dialoguedaily.app',
+    image: '/projects/dialoguedaily.jpg',
+    challenge: 'A nine-year journey — started on Upwork, survived two car accidents, and finally delivered. The client needed a counseling platform with content delivery, subscription management, and a seamless user experience.',
+    solution: 'Built a full-stack platform with React frontend, Node.js backend, subscription workflows, and content delivery pipelines. The project taught patience and persistence as much as engineering.',
+    techniques: ['Subscription workflow management', 'Content delivery pipelines', 'React + Node.js full-stack architecture'],
+  },
+  {
+    title: 'MR USBLock',
+    description:
+      'Digital asset access control system with ML-based behavioral anomaly detection. Flags access pattern deviations before they escalate to breaches.',
+    tags: ['Security', 'ML', 'Anomaly Detection', 'Access Control'],
+    icon: 'camera',
+    company: 'NeuralBridge',
+    image: '/projects/mr-usblock.jpg',
+    challenge: 'Traditional access control only checks credentials — but what if an authorized user starts behaving abnormally? Detecting insider threats requires behavioral analysis, not just authentication.',
+    solution: 'ML-based behavioral anomaly detection monitors access patterns in real-time. Deviations from established baselines trigger alerts before they escalate to breaches. Layered on top of standard access control for defense in depth.',
+    techniques: ['ML-based behavioral anomaly detection', 'Real-time access pattern monitoring', 'Baseline deviation alerting', 'Defense-in-depth access control'],
+  },
+  {
+    title: 'MemoLabs',
+    description:
+      'BRC-20 inscription platform and airdrop point system. Built frontend platform and website for blockchain inscription services.',
+    tags: ['BRC-20', 'Blockchain', 'Web3', 'Frontend'],
+    icon: 'credit-card',
+    company: 'NeuralBridge',
+    url: 'https://memolabs.org',
+    image: '/projects/memolabs.jpg',
+    challenge: 'BRC-20 inscription on Bitcoin requires specialized tooling. Users need a clean interface to create inscriptions, track them, and participate in airdrop point systems.',
+    solution: 'Built the frontend platform and website for MemoLabs — handling BRC-20 inscription creation, tracking, and an airdrop point system for community engagement.',
+    techniques: ['BRC-20 inscription interface', 'Airdrop point system', 'Web3 frontend integration'],
+  },
+  {
+    title: 'Drive3',
+    description:
+      'Web3 decentralized storage platform for secure, distributed file storage on the blockchain.',
+    tags: ['Web3', 'Storage', 'Blockchain', 'Decentralized'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    challenge: 'Centralized storage has single points of failure. Building a Web3 storage platform that distributes files across a decentralized network while maintaining reliability and speed.',
+    solution: 'Built a Web3 decentralized storage platform leveraging blockchain for file integrity verification and distributed nodes for storage redundancy.',
+    techniques: ['Decentralized file storage', 'Blockchain integrity verification', 'Distributed node architecture'],
+  },
+  {
+    title: 'Reshoper',
+    description:
+      'Enterprise-grade Restaurant & Shopping Mall Management Platform covering web and app interfaces. Desktop-based restaurant management software with POS integration.',
+    tags: ['React', 'Node.js', 'Enterprise', 'POS'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    image: '/projects/reshoper.jpg',
+    challenge: 'Restaurants and shopping malls need unified management — POS, inventory, staff scheduling, reporting — across both web and desktop interfaces. Different environments, same data.',
+    solution: 'Delivered enterprise-grade management platform with web and app interfaces plus desktop-based restaurant management software. POS integration handles real-time transactions and inventory updates.',
+    techniques: ['Cross-platform architecture (web + desktop)', 'POS integration', 'Real-time inventory and staff management', 'Enterprise reporting dashboards'],
+  },
+  {
+    title: 'MR Eye',
+    description:
+      'Endpoint monitoring solution with screen recording, keystroke tracking, and behavioral anomaly detection for enterprise security oversight.',
+    tags: ['Security', 'Monitoring', 'Anomaly Detection', 'Screen Recording'],
+    icon: 'camera',
+    company: 'NovaCircuit',
+    image: '/projects/mr-eye.jpg',
+    challenge: 'Enterprise security requires monitoring endpoints without blocking productivity. The system had to capture screen activity, track keystrokes, and detect anomalous behavior — all without noticeable performance impact.',
+    solution: 'Built a lightweight endpoint agent with screen recording, keystroke tracking, and behavioral anomaly detection. The anomaly detection engine flags unusual patterns — mass file copies, off-hours access, unexpected application usage — for security review.',
+    techniques: ['Low-overhead screen recording', 'Keystroke pattern tracking', 'Behavioral anomaly detection engine', 'Real-time security alerting'],
+  },
+  {
+    title: 'MeetUp',
+    description:
+      'Windows desktop video conferencing application with real-time audio/video streaming. Also built a web-based version using Node.js, MongoDB, and WebRTC.',
+    tags: ['WebRTC', 'Node.js', 'MongoDB', 'Windows'],
+    icon: 'brain',
+    company: 'NovaCircuit',
+    image: '/projects/meetup.jpg',
+    challenge: 'Real-time video conferencing on Windows desktop with multi-party audio/video streaming. Latency, synchronization, and bandwidth management are all critical.',
+    solution: 'Built a Windows desktop application with real-time audio/video streaming. Later extended to a web-based version using Node.js, MongoDB, and WebRTC for browser-based communication.',
+    techniques: ['Real-time audio/video streaming', 'WebRTC for browser-based conferencing', 'Multi-party synchronization', 'Bandwidth-adaptive streaming'],
+  },
+  {
+    title: 'Lottery Platform',
+    description:
+      'High-concurrency lottery platform built in Rust with Svelte frontend and PostgreSQL. Handles 100,000+ simultaneous ticket purchases with sub-second latency. Transactional integrity is non-negotiable — every ticket must be atomic, every draw must be verifiable, and every user must see consistent state.',
+    tags: ['Rust', 'Svelte', 'PostgreSQL', 'High Concurrency', 'Transactional Integrity', 'WebSocket'],
+    icon: 'credit-card',
+    company: 'NeuralBridge',
+    challenge: '100,000 users buying lottery tickets simultaneously creates extreme write contention on the database. Every ticket purchase must be atomic — no double-sales, no lost tickets, no race conditions. Traditional web frameworks buckle under this load, and a single failed transaction means a real user loses money.',
+    solution: 'Built the backend in Rust for zero-cost abstractions and predictable memory management. PostgreSQL handles transactional integrity with row-level locking and SERIALIZABLE isolation for ticket sales. Connection pooling with bounded async tasks prevents resource exhaustion under peak load. Svelte frontend delivers a lightweight client-side experience with real-time WebSocket updates for draw results and ticket status.',
+    techniques: ['Rust async runtime for high-concurrency handling', 'PostgreSQL row-level locking with SERIALIZABLE isolation', 'Bounded connection pooling to prevent resource exhaustion', 'WebSocket real-time draw updates', 'Atomic ticket purchase transactions', 'Svelte reactive frontend with minimal bundle size'],
+  },
 ]
 
 export type PsychometricTrait = {
@@ -367,3 +617,27 @@ export const mbtiData = {
     },
   ] as MbtiSection[],
 }
+
+export type Education = {
+  degree: string
+  institution: string
+  period: string
+  description: string
+}
+
+export const education: Education[] = [
+  {
+    degree: 'Bachelor of Computer Science',
+    institution: 'James Cook University, Singapore',
+    period: '2011 – 2014',
+    description:
+      'Studied core computer science subjects including computer architecture, algorithms, data structures, software engineering, databases, networks, and artificial intelligence.',
+  },
+  {
+    degree: 'Blockchain Bootcamp',
+    institution: 'Moralis Academy',
+    period: '2019',
+    description:
+      'Completed a Blockchain Bootcamp focused on smart contract development (Solidity), Web3 integration (Web3.js/Ethers.js), decentralized application (dApp) architecture, token standards (ERC-20/BRC-20), and blockchain security fundamentals.',
+  },
+]

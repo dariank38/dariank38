@@ -1,4 +1,4 @@
-import { ArrowRight, Brain, Cloud, Code, Cpu, Layers, Smartphone, Mail, FolderGit2, Network, Blocks, Terminal, Wrench, Database, Lightbulb } from 'lucide-react'
+import { ArrowRight, Brain, Cloud, Code, Cpu, Layers, Smartphone, Mail, FolderGit2, Network, Blocks, Terminal, Wrench, Database, Lightbulb, GraduationCap, Briefcase } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -8,7 +8,7 @@ import { PrintButton } from '@/components/print-button'
 import { Section } from '@/components/section'
 import { Container } from '@/components/container'
 import { Timeline } from '@/components/timeline'
-import { experiences, skillCategories } from '@/lib/data'
+import { experiences, skillCategories, projectHighlights, education } from '@/lib/data'
 import { SITE_CONFIG } from '@/lib/constants'
 
 const skillIcons = [Code, Brain, Network, Cpu, Terminal, Layers, Cloud, Database, Blocks, Smartphone, Wrench]
@@ -88,12 +88,19 @@ export default function ResumePage() {
                 <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-600">
                   Education
                 </h3>
-                <MagicCard className="p-4">
-                  <div className="">
-                    <p className="text-sm font-medium text-foreground">BSc Computer Science</p>
-                    <p className="text-xs text-muted-foreground">James Cook University, Singapore · 2011–2014</p>
-                  </div>
-                </MagicCard>
+                <div className="space-y-3">
+                  {education.map((edu) => (
+                    <MagicCard key={edu.degree} className="p-4">
+                      <div className="flex items-start gap-2">
+                        <GraduationCap className="mt-0.5 h-4 w-4 shrink-0 text-amber-700 dark:text-amber-600" />
+                        <div>
+                          <p className="text-sm font-medium text-foreground">{edu.degree}</p>
+                          <p className="text-xs text-muted-foreground">{edu.institution} · {edu.period}</p>
+                        </div>
+                      </div>
+                    </MagicCard>
+                  ))}
+                </div>
               </div>
 
               {/* Contact */}
@@ -123,6 +130,24 @@ export default function ResumePage() {
               </h3>
             </BlurFade>
             <Timeline items={experiences} />
+
+            {/* Link to projects page */}
+            <BlurFade className="mt-12" yOffset={20}>
+              <Link href="/projects" className="group block">
+                <MagicCard className="flex items-center justify-between gap-4 border-amber-200/50 p-6 transition-all hover:shadow-md dark:border-amber-950/15">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
+                      <Briefcase className="h-5 w-5 text-amber-700 dark:text-amber-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">View All Projects</p>
+                      <p className="text-xs text-muted-foreground">{projectHighlights.length} projects with challenges, solutions & techniques</p>
+                    </div>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-amber-700 dark:group-hover:text-amber-700" />
+                </MagicCard>
+              </Link>
+            </BlurFade>
 
             {/* Link to psychometrics page */}
             <BlurFade className="mt-12" yOffset={20}>

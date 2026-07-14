@@ -1,23 +1,21 @@
 import {
   ArrowRight,
-  Camera,
-  CreditCard,
-  FileText,
   Brain,
   Code,
   Cpu,
   Heart,
   Layers,
   Smartphone,
-  Sparkles,
   Cloud,
   Quote,
-  Zap,
   Network,
   Blocks,
   Terminal,
   Wrench,
   Database,
+  Briefcase,
+  FileText,
+  PenLine,
 } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -27,22 +25,13 @@ import { MagicCard } from '@/components/magicui/magic-card'
 import { Hero } from '@/components/hero'
 import { Section } from '@/components/section'
 import { Container } from '@/components/container'
-import { Timeline } from '@/components/timeline'
 import {
-  blogPosts,
-  experiences,
   projectHighlights,
   skillCategories,
   testimonials,
 } from '@/lib/data'
 
 const skillIcons = [Code, Brain, Network, Cpu, Terminal, Layers, Cloud, Database, Blocks, Smartphone, Wrench]
-const projectIcons: Record<string, React.ElementType> = {
-  brain: Brain,
-  'credit-card': CreditCard,
-  camera: Camera,
-  'file-text': FileText,
-}
 
 export const metadata = {
   title: {
@@ -94,85 +83,64 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Projects — alternating left/right layout */}
+      {/* Explore — compact 3-card hub */}
       <Section
-        eyebrow="Selected work"
-        title="Projects I'm proud of"
-        subtitle="From AI to hardware to fintech at scale — a few highlights from the journey."
+        eyebrow="Explore"
+        title="Dig deeper"
+        subtitle="Projects, writing, and the full resume — all in one place."
         className="bg-surface"
       >
-        <div className="space-y-12">
-          {projectHighlights.map((project, index) => {
-            const Icon = projectIcons[project.icon] || Sparkles
-            const reversed = index % 2 === 1
-            return (
-              <BlurFade key={project.title} delay={index * 0.08} yOffset={30}>
-                <div className={`grid items-center gap-8 md:grid-cols-2 ${reversed ? 'md:[&>*:first-child]:order-2' : ''}`}>
-                  <MagicCard className="p-8">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
-                      <Icon className="h-7 w-7 text-amber-700 dark:text-amber-600" />
-                    </div>
-                    <h3 className="mt-5 text-xl font-bold text-foreground">{project.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-amber-100/60 text-amber-900 dark:bg-amber-950/20 dark:text-amber-600">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </MagicCard>
-                  <div className="flex flex-col gap-4">
-                    <div className="rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-100/40 to-rose-100/30 p-6 dark:border-amber-950/15 dark:from-amber-900/10 dark:to-rose-900/5">
-                      <div className="flex items-center gap-2 text-amber-800 dark:text-amber-600">
-                        <Zap className="h-4 w-4" />
-                        <span className="text-xs font-semibold uppercase tracking-wider">Impact</span>
-                      </div>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {index === 0 && 'Ensemble scoring across 4 models (LLaMA, Mistral, GPT, Gemini) — each evaluates different dimensions: technical depth, domain specificity, communication clarity. Two-layer fraud detection caught semantic inconsistencies that rule-based systems missed. RAG matching via Pinecone/Weaviate replaced keyword search entirely.'}
-                        {index === 1 && 'Secure transaction flows with multi-party settlement logic at Alipay scale. Blockchain-inspired signing gave every transaction a cryptographic foundation. Balanced MongoDB for speed and Oracle DB for consistency across the full order lifecycle — vendor management, inventory, and payments across multiple storefronts.'}
-                        {index === 2 && '280 Hikvision camera feeds processed in real time to control physical access gates via PLC integration. Every gate open/close cycle had to be reliable — software failures meant real vehicles stuck at real gates. Thermal imaging extension during COVID added anomaly detection on top of access control.'}
-                      </p>
-                    </div>
-                  </div>
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+          <BlurFade yOffset={20}>
+            <Link href="/projects" className="group block h-full">
+              <MagicCard className="flex h-full flex-col gap-3 p-6 transition-all hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
+                  <Briefcase className="h-6 w-6 text-amber-700 dark:text-amber-600" />
                 </div>
-              </BlurFade>
-            )
-          })}
-        </div>
-      </Section>
-
-      {/* Career — split layout: timeline left, CTA card right */}
-      <Section
-        eyebrow="Journey"
-        title="Career phases"
-        subtitle="Every phase taught me something new — and I loved every step."
-      >
-        <div className="grid gap-12 lg:grid-cols-[1fr_320px]">
-          <Timeline items={experiences.slice(0, 4)} />
-          <BlurFade delay={0.2} yOffset={20}>
-            <div className="sticky top-24 space-y-4">
-              <MagicCard className="p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-600">
-                  Want the full picture?
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  See the complete resume with all experience, skills, and education.
-                </p>
-                <Button asChild variant="outline" className="mt-4 w-full rounded-full border-amber-400/60 text-amber-800 hover:bg-amber-100/50 dark:border-amber-800/30 dark:text-amber-600 dark:hover:bg-amber-900/20">
-                  <Link href="/resume">
-                    View full resume
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <div>
+                  <p className="text-base font-semibold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-600">Projects</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{projectHighlights.length} projects with challenges, solutions & techniques</p>
+                </div>
+                <span className="mt-auto inline-flex items-center text-sm font-medium text-amber-700 dark:text-amber-600">
+                  Browse projects
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
               </MagicCard>
-              <div className="rounded-2xl border border-amber-200/50 bg-amber-100/50 p-6 dark:border-amber-950/15 dark:bg-amber-950/20">
-                <p className="text-3xl font-bold text-gradient">10+</p>
-                <p className="mt-1 text-sm text-muted-foreground">Years building software across every layer of the stack.</p>
-              </div>
-            </div>
+            </Link>
+          </BlurFade>
+          <BlurFade delay={0.08} yOffset={20}>
+            <Link href="/blog" className="group block h-full">
+              <MagicCard className="flex h-full flex-col gap-3 p-6 transition-all hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
+                  <PenLine className="h-6 w-6 text-amber-700 dark:text-amber-600" />
+                </div>
+                <div>
+                  <p className="text-base font-semibold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-600">Blog</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Stories, lessons, and write-ups from the trenches</p>
+                </div>
+                <span className="mt-auto inline-flex items-center text-sm font-medium text-amber-700 dark:text-amber-600">
+                  Read posts
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </MagicCard>
+            </Link>
+          </BlurFade>
+          <BlurFade delay={0.16} yOffset={20}>
+            <Link href="/resume" className="group block h-full">
+              <MagicCard className="flex h-full flex-col gap-3 p-6 transition-all hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
+                  <FileText className="h-6 w-6 text-amber-700 dark:text-amber-600" />
+                </div>
+                <div>
+                  <p className="text-base font-semibold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-600">Resume</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Full experience timeline, skills & education</p>
+                </div>
+                <span className="mt-auto inline-flex items-center text-sm font-medium text-amber-700 dark:text-amber-600">
+                  View resume
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </MagicCard>
+            </Link>
           </BlurFade>
         </div>
       </Section>
@@ -213,60 +181,6 @@ export default function HomePage() {
               </MagicCard>
             </BlurFade>
           ))}
-        </div>
-      </Section>
-
-      {/* Blog — featured + grid */}
-      <Section
-        eyebrow="Writing"
-        title="Latest posts"
-        subtitle="Thoughts, stories, and lessons from the trenches."
-      >
-        <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-          {/* Featured post */}
-          <BlurFade yOffset={20}>
-            <Link href={blogPosts[0].slug === 'story' ? '/story' : '/blog'}>
-              <MagicCard className="group h-full p-8">
-                <div className="flex flex-wrap gap-2">
-                  {blogPosts[0].tags.map((tag) => (
-                    <Badge key={tag} className="bg-amber-700/90 text-white">{tag}</Badge>
-                  ))}
-                </div>
-                <h3 className="mt-4 text-2xl font-bold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">
-                  {blogPosts[0].title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  {blogPosts[0].excerpt}
-                </p>
-                <span className="mt-6 inline-flex items-center text-sm font-medium text-amber-700 dark:text-amber-600">
-                  Read post
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </MagicCard>
-            </Link>
-          </BlurFade>
-          {/* Secondary posts */}
-          <div className="flex flex-col gap-4">
-            {blogPosts.slice(1).map((post, index) => (
-              <BlurFade key={post.slug} delay={index * 0.08} yOffset={20}>
-                <Link href={post.slug === 'story' ? '/story' : '/blog'}>
-                  <MagicCard className="group h-full p-5">
-                    <div className="flex flex-wrap gap-1.5">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="bg-amber-100/60 text-xs text-amber-900 dark:bg-amber-950/20 dark:text-amber-600">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <h3 className="mt-2 text-base font-semibold text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">
-                      {post.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                  </MagicCard>
-                </Link>
-              </BlurFade>
-            ))}
-          </div>
         </div>
       </Section>
 

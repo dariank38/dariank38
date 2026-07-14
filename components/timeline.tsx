@@ -26,7 +26,10 @@ export function Timeline({ items }: TimelineProps) {
           <MagicCard className="border-l-4 border-l-amber-400/60 transition-all hover:shadow-md">
             <CardHeader className="pb-2">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                <CardTitle className="text-xl">{item.title}</CardTitle>
+                <div>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <p className="mt-0.5 text-sm font-medium text-amber-700 dark:text-amber-600">{item.company}</p>
+                </div>
                 <Badge variant="secondary" className="w-fit bg-amber-100/60 text-amber-900 dark:bg-amber-950/20 dark:text-amber-600">
                   {item.period}
                 </Badge>
@@ -36,6 +39,16 @@ export function Timeline({ items }: TimelineProps) {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              {item.details.length > 0 && (
+                <ul className="mb-4 space-y-1.5">
+                  {item.details.map((detail, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-amber-600/60" />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <div className="flex flex-wrap gap-2">
                 {item.skills.map((skill) => (
                   <Badge key={skill} variant="secondary">
