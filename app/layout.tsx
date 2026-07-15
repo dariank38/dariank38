@@ -133,7 +133,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <ThemeProvider defaultTheme="dark" enableSystem attribute="class">
+        <ThemeProvider defaultTheme="light" enableSystem attribute="class">
           <Navbar />
           <main className="flex-1 pt-16">{children}</main>
           <Footer />
