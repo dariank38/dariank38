@@ -29,7 +29,7 @@ export const storyParagraphs = [
 
   `I also contributed to the KakaoTalk desktop client, led development of a remote internal security management system, built a product sales platform, and — right around the time TensorFlow and Keras were emerging — developed a CAPTCHA auto-recognition and bypass program.`,
 
-  `At my next company, I encountered something I'd never dealt with before: the intersection of software and physical hardware. I'd dabbled with toggling LEDs via assembly and briefly played around with a Raspberry Pi, but this was a different scale entirely. The project involved processing video feeds from 280 Hikvision cameras and using the results to automatically control access gates at the company's main entrance and other locations — opening and closing them based on vehicle authorization. This required not just computer vision, but also PLC and Arduino integration for motor control. I didn't design the physical PLC boards — hardware engineering isn't my field — but I was responsible for everything on the software side.`,
+  `At my next company, I encountered something I'd never dealt with before: the intersection of software and physical hardware. I'd dabbled with toggling LEDs via assembly and briefly played around with a Raspberry Pi, but this was a different scale entirely. The project involved processing video feeds from 280 Hikvision cameras and using the results to automatically control access gates at the company's main entrance and other locations — opening and closing them based on vehicle authorization. This required not just computer vision, but also PLC integration for motor control. I didn't design the physical PLC boards — hardware engineering isn't my field — but I was responsible for everything on the software side.`,
 
   `During the COVID period, I also developed an employee attendance and anomaly detection system using thermal imaging cameras.`,
 
@@ -116,10 +116,10 @@ export const experiences: Experience[] = [
       'Architected MR Pay — digital payment platform similar to Alipay with secure transaction flows and multi-party settlement logic',
       'Built MR Bay — full-scale e-commerce ecosystem comparable to Alibaba (order processing, vendor management, payment integration)',
       'Designed and launched DialogueDaily — relationship and marriage counseling platform with content delivery and subscription workflows',
-      'Built StrongGate — license plate recognition system with 280 Hikvision cameras, PLC/Arduino gate control, and thermal imaging attendance during COVID',
+      'Built StrongGate — license plate recognition system with 280 Hikvision cameras, PLC gate control, and thermal imaging attendance during COVID',
       'Delivered Reshoper — Restaurant & Shopping Mall Management Platform (web + app) and desktop-based restaurant management software',
     ],
-    skills: ['Node.js', 'MongoDB', 'Oracle DB', 'Computer Vision', 'PLC', 'Arduino', 'C#', 'React', 'AWS', 'Blockchain'],
+    skills: ['Node.js', 'MongoDB', 'Oracle DB', 'Computer Vision', 'PLC', 'C#', 'React', 'AWS', 'Blockchain'],
   },
   {
     title: 'Senior AI Engineer',
@@ -351,14 +351,14 @@ export const projectHighlights: ProjectHighlight[] = [
   {
     title: 'StrongGate',
     description:
-      'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC/Arduino integration. YOLO-based object detection and OpenCV image processing for license plate recognition. Also built a thermal-imaging attendance system during COVID.',
-    tags: ['Computer Vision', 'YOLO', 'OpenCV', 'TensorFlow', 'Face Detection', 'Object Detection', 'PLC', 'Arduino', 'HIKVision SDK', 'C++'],
+      'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC integration. YOLO-based object detection and OpenCV image processing for license plate recognition. Also built a thermal-imaging attendance system during COVID.',
+    tags: ['Computer Vision', 'YOLO', 'OpenCV', 'TensorFlow', 'Face Detection', 'Object Detection', 'PLC', 'HIKVision SDK', 'C++'],
     icon: 'camera',
     company: 'NeuralBridge',
     image: '/projects/stronggate.jpg',
     challenge: '280 Hikvision cameras feeding live video to control physical access gates. Every gate open/close cycle had to be reliable — software failures meant real vehicles stuck at real gates. License plate recognition had to work in varying lighting, weather, and angles.',
-    solution: 'Built a YOLO-based object detection pipeline for vehicle detection, OpenCV for license plate recognition, and face detection for driver verification. PLC/Arduino integration handles physical gate control with fail-safe defaults. Thermal imaging extension during COVID added body temperature screening on top of access control.',
-    techniques: ['YOLO object detection for vehicles', 'OpenCV license plate recognition', 'Face detection for driver verification', 'PLC/Arduino gate control with fail-safe', 'Thermal imaging anomaly detection'],
+    solution: 'Built a YOLO-based object detection pipeline for vehicle detection, OpenCV for license plate recognition, and face detection for driver verification. PLC integration handles physical gate control with fail-safe defaults. Thermal imaging extension during COVID added body temperature screening on top of access control.',
+    techniques: ['YOLO object detection for vehicles', 'OpenCV license plate recognition', 'Face detection for driver verification', 'PLC gate control with fail-safe', 'Thermal imaging anomaly detection'],
   },
   {
     title: 'Author Wizard',
