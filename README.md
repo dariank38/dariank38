@@ -1,4 +1,4 @@
-# Hi, I'm Darian :crown
+# Hi, I'm Darian 👑
 
 **Software Engineer** — Windows Programming · Full-Stack Development · AI Engineering
 
