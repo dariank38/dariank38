@@ -25,14 +25,13 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
-    onScroll()
+    const raf = requestAnimationFrame(onScroll)
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
-
-  useEffect(() => {
-    setOpen(false)
-  }, [normalized])
 
   return (
     <nav
@@ -90,6 +89,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => setOpen(false)}
                   className={cn(
                     'flex items-baseline gap-4 border-b border-line py-4 last:border-b-0',
                     active ? 'text-gold' : 'text-foreground'

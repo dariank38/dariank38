@@ -12,7 +12,10 @@ export function Orb() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { resolvedTheme } = useTheme()
   const themeRef = useRef<string | undefined>(resolvedTheme)
-  themeRef.current = resolvedTheme
+
+  useEffect(() => {
+    themeRef.current = resolvedTheme
+  }, [resolvedTheme])
 
   useEffect(() => {
     const cv = canvasRef.current

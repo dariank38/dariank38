@@ -23,8 +23,14 @@ export default function ProjectsPage() {
       projects: projectHighlights.filter((p) => p.company === company),
     }))
     .filter((g) => g.projects.length > 0)
-
-  let counter = 0
+    .reduce<{ company: string; projects: typeof projectHighlights; start: number }[]>(
+      (acc, g) => {
+        const prev = acc[acc.length - 1]
+        const start = prev ? prev.start + prev.projects.length : 0
+        return [...acc, { ...g, start }]
+      },
+      []
+    )
 
   return (
     <>
@@ -69,9 +75,8 @@ export default function ProjectsPage() {
                 </div>
               </Reveal>
               <div>
-                {group.projects.map((project) => {
-                  counter += 1
-                  const no = String(counter).padStart(2, '0')
+                {group.projects.map((project, projectIndex) => {
+                  const no = String(group.start + projectIndex + 1).padStart(2, '0')
                   return (
                     <Reveal key={project.title}>
                       <article className="grid gap-8 border-b border-line py-12 lg:grid-cols-[1fr_20rem]">
