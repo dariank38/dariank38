@@ -1,9 +1,4 @@
-import { Brain, Target, Users, TrendingUp, Sparkles, CheckCircle2, Heart, Briefcase, TrendingUp as Growth, Users as Relationships, Fingerprint } from 'lucide-react'
-import { BlurFade } from '@/components/magicui/blur-fade'
-import { MagicCard } from '@/components/magicui/magic-card'
-import { Section } from '@/components/section'
-import { Container } from '@/components/container'
-import { Badge } from '@/components/ui/badge'
+import { Reveal } from '@/components/reveal'
 import { psychometricTraits, psychometricSummary, mbtiData } from '@/lib/data'
 
 export const metadata = {
@@ -16,233 +11,137 @@ export const metadata = {
   },
 }
 
-const traitIcons = [Brain, Target, Users, TrendingUp]
-
 export default function ProfilePage() {
   return (
     <>
       {/* Header */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-amber-100/50 to-background pt-32 pb-2 dark:from-amber-950/10 dark:to-background">
-        <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-amber-600/15 blur-3xl dark:bg-amber-800/10" />
-        <div className="pointer-events-none absolute -right-32 top-10 h-64 w-64 rounded-full bg-amber-300/10 blur-3xl dark:bg-amber-800/10" />
-        <Container className="relative z-10">
-          <BlurFade yOffset={20}>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-600">
-              Assessment
+      <section className="border-b border-line pb-14 pt-36">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <Reveal>
+            <p className="eyebrow">Assessment · Snaphunt + 16Personalities</p>
+            <h1 className="display mt-3 text-4xl sm:text-6xl">Data on the person.</h1>
+            <p className="mt-5 max-w-2xl leading-relaxed text-dim">
+              Two independent assessments — the Snaphunt psychometric profile covering thinking
+              style, execution, collaboration, and adaptability, and the 16Personalities MBTI
+              inventory.
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              <span className="text-gradient">Psychometric Profile</span>
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Insights from the Snaphunt psychometric assessment — covering thinking style, execution, collaboration, and adaptability.
+            <p className="mono-label mt-7">
+              TOP TRAITS — {psychometricSummary.topTraits.join(' · ').toUpperCase()}
             </p>
-          </BlurFade>
-        </Container>
+          </Reveal>
+        </div>
       </section>
 
-      {/* Top traits */}
-      <Section className="py-2 md:py-2">
-        <BlurFade yOffset={20}>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm font-medium text-muted-foreground">Top traits:</span>
-            {psychometricSummary.topTraits.map((trait) => (
-              <Badge key={trait} className="bg-amber-700/15 text-amber-800 dark:bg-amber-800/20 dark:text-amber-600">
-                <Sparkles className="mr-1 h-3 w-3" />
-                {trait}
-              </Badge>
-            ))}
-          </div>
-        </BlurFade>
-      </Section>
-
-      {/* Trait cards */}
-      <Section className="py-2 md:py-6">
-        <div className="grid gap-6 md:grid-cols-2">
-          {psychometricTraits.map((trait, index) => {
-            const Icon = traitIcons[index] || Brain
-            return (
-              <BlurFade key={trait.category} delay={index * 0.08} yOffset={20}>
-                <MagicCard className="h-full border-amber-200/50 p-6 dark:border-amber-950/15">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
-                      <Icon className="h-6 w-6 text-amber-700 dark:text-amber-600" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-foreground">{trait.category}</h3>
-                      <div className="mt-1 flex flex-wrap gap-1.5">
-                        {trait.traits.map((t) => (
-                          <span key={t} className="rounded-md bg-amber-100/50 px-2 py-0.5 text-xs font-medium text-amber-900 dark:bg-amber-950/20 dark:text-amber-600">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {trait.description}
-                  </p>
-                </MagicCard>
-              </BlurFade>
-            )
-          })}
-        </div>
-      </Section>
-
-      {/* Role Fit & Organization Fit */}
-      <Section className="py-2 md:py-6">
-        <div className="grid gap-6 md:grid-cols-2">
-          <BlurFade yOffset={20}>
-            <MagicCard className="h-full border-amber-200/50 p-6 dark:border-amber-950/15">
-              <div className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-amber-700 dark:text-amber-600" />
-                <h3 className="text-lg font-bold text-foreground">Role Fit</h3>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Roles where I tend to thrive:
-              </p>
-              <ul className="mt-4 space-y-3">
-                {psychometricSummary.roleFit.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </MagicCard>
-          </BlurFade>
-          <BlurFade delay={0.08} yOffset={20}>
-            <MagicCard className="h-full border-amber-200/50 p-6 dark:border-amber-950/15">
-              <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-amber-700 dark:text-amber-600" />
-                <h3 className="text-lg font-bold text-foreground">Organization Fit</h3>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Environments where I do my best work:
-              </p>
-              <ul className="mt-4 space-y-3">
-                {psychometricSummary.organizationFit.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </MagicCard>
-          </BlurFade>
-        </div>
-      </Section>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
-
-      {/* MBTI Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-amber-100/40 pt-20 pb-16 md:pt-28 md:pb-20 dark:to-amber-950/10">
-        <div className="pointer-events-none absolute -right-32 top-0 h-72 w-72 rounded-full bg-amber-600/10 blur-3xl dark:bg-amber-700/8" />
-        <div className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-amber-300/10 blur-3xl dark:bg-amber-800/10" />
-        <Container className="relative z-10">
-        {/* MBTI Section Header */}
-        <BlurFade yOffset={20}>
-          <div className="mb-10 max-w-2xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-600">
-              <Fingerprint className="mr-1.5 inline h-4 w-4" />
-              16Personalities
-            </p>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              <span className="text-gradient">MBTI Personality Type</span>
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              My Myers-Briggs result from the 16Personalities assessment — a separate personality framework from the Snaphunt psychometric profile above.
-            </p>
-          </div>
-        </BlurFade>
-
-        {/* MBTI Result Card */}
-        <BlurFade delay={0.06} yOffset={20}>
-          <div className="mb-10 rounded-2xl border border-amber-200/50 bg-amber-100/50 p-8 dark:border-amber-950/15 dark:bg-amber-950/20">
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Result</p>
-                <p className="mt-1 text-3xl font-bold tracking-tight text-foreground">
-                  {mbtiData.type}{' '}—{' '}
-                  <span className="text-gradient">{mbtiData.typeName}</span>
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Role: {mbtiData.role}
-                </p>
-              </div>
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-600/20 to-amber-700/20">
-                <Fingerprint className="h-8 w-8 text-amber-700 dark:text-amber-600" />
-              </div>
+      {/* Snaphunt traits */}
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <Reveal>
+            <div className="mb-2 flex items-center gap-4">
+              <h2 className="mono-label text-gold">01 — SNAPHUNT PSYCHOMETRIC</h2>
+              <div className="h-px flex-1 bg-line" />
             </div>
-          </div>
-        </BlurFade>
-
-        {/* Trait bars */}
-        <BlurFade delay={0.08} yOffset={20}>
-          <div className="mx-auto mb-8 max-w-4xl space-y-4">
-            {mbtiData.traits.map((trait) => (
-              <div key={trait.label}>
-                <div className="mb-1.5 flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2">
-                    <span className="font-semibold text-foreground">{trait.label}</span>
-                    <span className="text-xs text-muted-foreground">{trait.category}</span>
-                  </span>
-                  <span className="text-xs font-medium text-muted-foreground">
-                    {trait.percent}%
-                  </span>
+          </Reveal>
+          <div className="grid sm:grid-cols-2">
+            {psychometricTraits.map((trait, i) => (
+              <Reveal key={trait.category} delay={(i % 2) * 0.08}>
+                <div className="h-full border-b border-line py-10 sm:pr-10 sm:odd:border-r sm:even:pl-10">
+                  <h3 className="text-xl font-semibold tracking-tight">{trait.category}</h3>
+                  <p className="mono-label mt-1.5 text-gold">{trait.traits.join(' · ').toUpperCase()}</p>
+                  <p className="mt-4 text-[0.92rem] leading-relaxed text-dim">{trait.description}</p>
                 </div>
-                <div className="relative h-2.5 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-amber-600 to-amber-700"
-                    style={{ width: `${trait.percent}%` }}
-                  />
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  vs {trait.opposite} ({100 - trait.percent}%)
-                </p>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </BlurFade>
 
-        {/* Description */}
-        <BlurFade delay={0.12} yOffset={20}>
-          <div className="mx-auto mb-8 max-w-4xl space-y-4">
-            {mbtiData.description.map((para, i) => (
-              <p key={i} className="text-sm leading-relaxed text-muted-foreground">
-                {para}
-              </p>
-            ))}
+          <div className="mt-16 grid gap-12 lg:grid-cols-2">
+            <Reveal>
+              <p className="mono-label mb-5 text-gold">ROLE FIT</p>
+              <ul className="space-y-3">
+                {psychometricSummary.roleFit.map((item) => (
+                  <li key={item} className="flex gap-3 leading-relaxed text-dim">
+                    <span className="select-none pt-px text-gold">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="mono-label mb-5 text-gold">ORGANIZATION FIT</p>
+              <ul className="space-y-3">
+                {psychometricSummary.organizationFit.map((item) => (
+                  <li key={item} className="flex gap-3 leading-relaxed text-dim">
+                    <span className="select-none pt-px text-gold">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
-        </BlurFade>
-
-        {/* Detail sections */}
-        <div className="mx-auto max-w-4xl grid gap-6 md:grid-cols-3">
-          {mbtiData.sections.map((section, index) => {
-            const icons = [Briefcase, Growth, Relationships]
-            const Icon = icons[index] || Heart
-            return (
-              <BlurFade key={section.title} delay={0.16 + index * 0.06} yOffset={20}>
-                <MagicCard className="h-full border-amber-200/50 p-6 dark:border-amber-950/15">
-                  <div className="flex items-center gap-2">
-                    <Icon className="h-5 w-5 text-amber-700 dark:text-amber-600" />
-                    <h3 className="text-base font-bold text-foreground">{section.title}</h3>
-                  </div>
-                  <div className="mt-3 space-y-2">
-                    {section.paragraphs.map((para, i) => (
-                      <p key={i} className="text-sm leading-relaxed text-muted-foreground">
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                </MagicCard>
-              </BlurFade>
-            )
-          })}
         </div>
-        </Container>
+      </section>
+
+      {/* MBTI */}
+      <section className="border-t border-line bg-background-2 py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <Reveal>
+            <div className="mb-12 flex items-center gap-4">
+              <h2 className="mono-label text-gold">02 — 16PERSONALITIES MBTI</h2>
+              <div className="h-px flex-1 bg-line" />
+            </div>
+          </Reveal>
+
+          <div className="grid gap-16 lg:grid-cols-[minmax(0,22rem)_1fr]">
+            <Reveal>
+              <p className="display text-6xl sm:text-7xl">
+                {mbtiData.type}
+              </p>
+              <p className="mono-label mt-3">
+                “{mbtiData.typeName.toUpperCase()}” · {mbtiData.role.toUpperCase()}
+              </p>
+              <div className="mt-10 space-y-6">
+                {mbtiData.traits.map((trait) => (
+                  <div key={trait.label}>
+                    <div className="flex items-baseline justify-between font-mono text-[0.72rem] tracking-[0.1em]">
+                      <span className="text-foreground">
+                        {trait.percent}% {trait.label.toUpperCase()}
+                      </span>
+                      <span className="text-faint">{trait.opposite.toUpperCase()}</span>
+                    </div>
+                    <div className="mt-2 h-px w-full bg-line">
+                      <div className="-mt-px h-[3px] bg-gold" style={{ width: `${trait.percent}%` }} />
+                    </div>
+                    <p className="mono-label mt-1.5">{trait.category}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div className="prose-craft max-w-[66ch]">
+                {mbtiData.description.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <div className="mt-12 border-t border-line">
+                {mbtiData.sections.map((section) => (
+                  <div
+                    key={section.title}
+                    className="grid gap-2 border-b border-line py-7 sm:grid-cols-[10rem_1fr] sm:gap-8"
+                  >
+                    <p className="mono-label pt-1.5 text-gold">{section.title.toUpperCase()}</p>
+                    <div>
+                      {section.paragraphs.map((p, i) => (
+                        <p key={i} className="text-[0.92rem] leading-relaxed text-dim">
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </section>
     </>
   )

@@ -1,12 +1,7 @@
-import { ArrowLeft, ArrowRight, Calendar, ExternalLink, Heart } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { BlurFade } from '@/components/magicui/blur-fade'
-import { MagicCard } from '@/components/magicui/magic-card'
-import { Section } from '@/components/section'
-import { Container } from '@/components/container'
+import { Reveal } from '@/components/reveal'
 import { blogPosts, blogPostContents } from '@/lib/data'
 
 export function generateStaticParams() {
@@ -39,6 +34,24 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   })
 }
 
+const uncleLinks = [
+  {
+    href: 'https://retrouvaille.info/',
+    title: 'Retrouvaille',
+    note: 'A lifeline for marriages — the program that started it all',
+  },
+  {
+    href: 'https://dialoguedaily.app/',
+    title: 'Dialogue Daily',
+    note: 'A daily conversation app for couples — the project we built together',
+  },
+  {
+    href: 'https://advancedwebstrategies.com/about-us/',
+    title: 'Advanced Web Strategies',
+    note: 'His team and company — where I work alongside him today',
+  },
+]
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = blogPosts.find((p) => p.slug === slug)
@@ -49,121 +62,102 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <>
       {/* Header */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-amber-100/50 to-background pt-32 pb-12 dark:from-amber-950/10 dark:to-background">
-        <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-amber-600/15 blur-3xl dark:bg-amber-800/10" />
-        <Container className="relative z-10">
-          <BlurFade yOffset={20}>
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-amber-700 dark:hover:text-amber-700">
-              <ArrowLeft className="h-4 w-4" />
-              Back to blog
+      <section className="border-b border-line pb-14 pt-36">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <Reveal>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.18em] text-dim transition-colors hover:text-gold"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              BACK TO BLOG
             </Link>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <Badge key={tag} className="bg-amber-700/15 text-amber-800 dark:bg-amber-800/20 dark:text-amber-600">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-              <span className="text-gradient">{post.title}</span>
-            </h1>
-            <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="h-3 w-3" />
-              {post.date}
-            </div>
-          </BlurFade>
-        </Container>
+            <h1 className="display mt-6 max-w-4xl text-4xl sm:text-6xl">{post.title}</h1>
+            <p className="mono-label mt-5">
+              {post.date} · {post.tags.join(' · ').toUpperCase()}
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* Content */}
-      <Section className="pt-8">
-        <div className="mx-auto max-w-2xl">
-          {content ? (
-            <article className="space-y-8">
-              {content.sections.map((section, sIndex) => (
-                <BlurFade key={sIndex} delay={sIndex * 0.05} yOffset={20}>
-                  <div>
-                    {section.heading && (
-                      <h2 className="mb-4 text-xl font-bold text-foreground">{section.heading}</h2>
-                    )}
-                    <div className="space-y-4">
-                      {section.paragraphs.map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-base leading-relaxed text-muted-foreground">
-                          {paragraph}
-                        </p>
-                      ))}
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-[68ch]">
+            {content ? (
+              <article>
+                {content.sections.map((section, sIndex) => (
+                  <Reveal key={sIndex}>
+                    <div className={sIndex > 0 ? 'mt-14' : undefined}>
+                      {section.heading && (
+                        <h2 className="mb-6 flex items-baseline gap-4 text-2xl font-semibold tracking-tight">
+                          <span className="mono-label text-gold">
+                            {String(sIndex).padStart(2, '0')}
+                          </span>
+                          {section.heading}
+                        </h2>
+                      )}
+                      <div className="prose-craft text-[1.05rem]">
+                        {section.paragraphs.map((paragraph, pIndex) => (
+                          <p key={pIndex}>{paragraph}</p>
+                        ))}
+                      </div>
                     </div>
+                  </Reveal>
+                ))}
+              </article>
+            ) : (
+              <p className="leading-relaxed text-dim">{post.excerpt}</p>
+            )}
+
+            {/* Uncle links */}
+            {slug === 'nine-years-and-uncle' && (
+              <Reveal className="mt-16">
+                <div className="rounded-2xl border border-line bg-background-2 p-8">
+                  <p className="mono-label text-gold">ABOUT UNCLE</p>
+                  <p className="mt-3 text-sm leading-relaxed text-dim">
+                    The marriage and couples-counseling service he runs, and the work he stands
+                    behind:
+                  </p>
+                  <div className="mt-5">
+                    {uncleLinks.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-baseline justify-between gap-4 border-b border-line py-4 last:border-b-0"
+                      >
+                        <span>
+                          <span className="font-semibold transition-colors group-hover:text-gold">
+                            {l.title}
+                          </span>
+                          <span className="mt-0.5 block text-sm text-dim">{l.note}</span>
+                        </span>
+                        <ArrowUpRight className="h-4 w-4 shrink-0 text-faint transition-colors group-hover:text-gold" />
+                      </a>
+                    ))}
                   </div>
-                </BlurFade>
-              ))}
-            </article>
-          ) : (
-            <MagicCard className="p-8">
-              <p className="text-base leading-relaxed text-muted-foreground">
-                {post.excerpt}
-              </p>
-            </MagicCard>
-          )}
-
-          {/* Uncle links */}
-          {slug === 'nine-years-and-uncle' && (
-            <BlurFade className="mt-12" yOffset={20}>
-              <div className="rounded-2xl border border-amber-200/50 bg-amber-100/40 p-8 dark:border-amber-950/15 dark:bg-amber-950/20">
-                <div className="flex items-center gap-2">
-                  <Heart className="h-4 w-4 text-amber-700 dark:text-amber-600" />
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-600">
-                    About Uncle
-                  </h3>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  The marriage and couples-counseling service he runs, and the work he stands behind:
-                </p>
-                <div className="mt-5 space-y-3">
-                  <a href="https://retrouvaille.info/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-xl border border-amber-200/50 bg-background p-4 transition-all hover:shadow-md dark:border-amber-950/15">
-                    <div>
-                      <p className="text-sm font-medium text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">Retrouvaille</p>
-                      <p className="text-xs text-muted-foreground">A lifeline for marriages — the program that started it all</p>
-                    </div>
-                    <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700" />
-                  </a>
-                  <a href="https://dialoguedaily.app/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-xl border border-amber-200/50 bg-background p-4 transition-all hover:shadow-md dark:border-amber-950/15">
-                    <div>
-                      <p className="text-sm font-medium text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">Dialogue Daily</p>
-                      <p className="text-xs text-muted-foreground">A daily conversation app for couples — the project we built together</p>
-                    </div>
-                    <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700" />
-                  </a>
-                  <a href="https://advancedwebstrategies.com/about-us/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-xl border border-amber-200/50 bg-background p-4 transition-all hover:shadow-md dark:border-amber-950/15">
-                    <div>
-                      <p className="text-sm font-medium text-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700">Advanced Web Strategies</p>
-                      <p className="text-xs text-muted-foreground">His team and company — where I work alongside him today</p>
-                    </div>
-                    <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-amber-700 dark:group-hover:text-amber-700" />
-                  </a>
-                </div>
-              </div>
-            </BlurFade>
-          )}
+              </Reveal>
+            )}
 
-          {/* CTA */}
-          <BlurFade className="mt-12" yOffset={20}>
-            <div className="rounded-2xl bg-gradient-to-br from-amber-700 to-amber-800 p-8 text-center">
-              <p className="text-lg font-medium text-white">
-                Thanks for reading
-              </p>
-              <p className="mt-1 text-sm text-white/80">
-                Want to talk about your project?
-              </p>
-              <Button asChild size="lg" className="mt-6 rounded-full bg-white px-8 text-amber-800 shadow-lg hover:bg-white/90">
-                <Link href="/contact">
-                  Start a conversation
-                  <ArrowRight className="ml-2 h-4 w-4" />
+            {/* CTA */}
+            <Reveal className="mt-16">
+              <div className="border-t border-line pt-10">
+                <p className="text-lg font-medium">Thanks for reading.</p>
+                <p className="mt-1 text-sm text-dim">Want to talk about your project?</p>
+                <Link
+                  href="/contact"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-gold-bright"
+                >
+                  Start a conversation <ArrowRight className="h-4 w-4" />
                 </Link>
-              </Button>
-            </div>
-          </BlurFade>
+              </div>
+            </Reveal>
+          </div>
         </div>
-      </Section>
+      </section>
     </>
   )
 }

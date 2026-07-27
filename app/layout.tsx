@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SITE_CONFIG } from "@/lib/constants";
+import { getProfileImage } from "@/lib/profile-image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -113,6 +114,9 @@ export default function RootLayout({
               '@type': 'Person',
               name: SITE_CONFIG.name,
               jobTitle: SITE_CONFIG.title,
+              ...(getProfileImage()
+                ? { image: `https://clover38.com${getProfileImage()}` }
+                : {}),
               description: SITE_CONFIG.summary,
               email: `mailto:${SITE_CONFIG.email}`,
               url: 'https://clover38.com',
@@ -133,9 +137,9 @@ export default function RootLayout({
             }),
           }}
         />
-        <ThemeProvider defaultTheme="light" enableSystem attribute="class">
+        <ThemeProvider defaultTheme="dark" enableSystem={false} attribute="class">
           <Navbar />
-          <main className="flex-1 pt-16">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
