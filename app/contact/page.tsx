@@ -1,6 +1,6 @@
 import { ArrowUpRight, Check } from 'lucide-react'
 import { Portrait } from '@/components/portrait'
-import { Reveal } from '@/components/reveal'
+import { Reveal } from '@/components/fx'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export const metadata = {
@@ -29,13 +29,14 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pb-10 pt-40">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="relative overflow-hidden pb-10 pt-40">
+        <div className="aurora" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <Portrait size={72} className="mb-7" priority />
             <p className="eyebrow">Contact</p>
             <h1 className="display mt-3 text-4xl sm:text-6xl lg:text-7xl">
-              Have a problem nobody
+              Have a problem <span className="text-grad">nobody</span>
               <br />
               else can figure out?
             </h1>
@@ -45,7 +46,7 @@ export default function ContactPage() {
             </p>
             <a
               href={`mailto:${SITE_CONFIG.email}`}
-              className="mt-12 inline-block border-b-2 border-gold pb-1 text-2xl font-semibold tracking-tight transition-colors hover:text-gold sm:text-4xl"
+              className="mt-12 inline-block border-b-2 border-accent pb-1 text-2xl font-semibold tracking-tight transition-colors hover:text-accent sm:text-4xl"
             >
               {SITE_CONFIG.email}
             </a>
@@ -72,12 +73,12 @@ export default function ContactPage() {
                 >
                   <span className="mono-label pt-1">0{i + 1}</span>
                   <span>
-                    <span className="text-xl font-semibold tracking-tight transition-colors group-hover:text-gold">
+                    <span className="text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
                       {link.title}
                     </span>
                     <span className="ml-4 hidden text-sm text-dim sm:inline">{link.note}</span>
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-faint transition-colors group-hover:text-gold" />
+                  <ArrowUpRight className="h-4 w-4 text-faint transition-colors group-hover:text-accent" />
                 </a>
               ))}
             </div>
@@ -87,7 +88,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-x-8 gap-y-3">
               {trustSignals.map((item) => (
                 <span key={item} className="inline-flex items-center gap-2 text-sm text-dim">
-                  <Check className="h-3.5 w-3.5 text-gold" />
+                  <Check className="h-3.5 w-3.5 text-accent" />
                   {item}
                 </span>
               ))}

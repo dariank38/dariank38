@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Reveal } from '@/components/reveal'
+import { Reveal } from '@/components/fx'
 import { blogPosts, blogPostContents } from '@/lib/data'
 
 export function generateStaticParams() {
@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <Reveal>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.18em] text-dim transition-colors hover:text-gold"
+              className="inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.18em] text-dim transition-colors hover:text-accent"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               BACK TO BLOG
@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className={sIndex > 0 ? 'mt-14' : undefined}>
                       {section.heading && (
                         <h2 className="mb-6 flex items-baseline gap-4 text-2xl font-semibold tracking-tight">
-                          <span className="mono-label text-gold">
+                          <span className="mono-label text-accent">
                             {String(sIndex).padStart(2, '0')}
                           </span>
                           {section.heading}
@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {slug === 'nine-years-and-uncle' && (
               <Reveal className="mt-16">
                 <div className="rounded-2xl border border-line bg-background-2 p-8">
-                  <p className="mono-label text-gold">ABOUT UNCLE</p>
+                  <p className="mono-label text-accent">ABOUT UNCLE</p>
                   <p className="mt-3 text-sm leading-relaxed text-dim">
                     The marriage and couples-counseling service he runs, and the work he stands
                     behind:
@@ -129,12 +129,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         className="group flex items-baseline justify-between gap-4 border-b border-line py-4 last:border-b-0"
                       >
                         <span>
-                          <span className="font-semibold transition-colors group-hover:text-gold">
+                          <span className="font-semibold transition-colors group-hover:text-accent">
                             {l.title}
                           </span>
                           <span className="mt-0.5 block text-sm text-dim">{l.note}</span>
                         </span>
-                        <ArrowUpRight className="h-4 w-4 shrink-0 text-faint transition-colors group-hover:text-gold" />
+                        <ArrowUpRight className="h-4 w-4 shrink-0 text-faint transition-colors group-hover:text-accent" />
                       </a>
                     ))}
                   </div>
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <p className="mt-1 text-sm text-dim">Want to talk about your project?</p>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-gold-bright"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-bright"
                 >
                   Start a conversation <ArrowRight className="h-4 w-4" />
                 </Link>

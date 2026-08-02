@@ -75,9 +75,10 @@ export function Orb() {
       ctx.clearRect(0, 0, W, H)
 
       const dark = themeRef.current !== 'light'
-      const inkDot = dark ? '236,229,216' : '30,26,17'
-      const goldDot = dark ? '232,163,61' : '166,106,20'
-      const inkAlpha = dark ? 0.5 : 0.34
+      const inkDot = dark ? '242,244,251' : '10,12,24'
+      const goldDot = dark ? '167,139,250' : '109,40,217'
+      const pinkDot = dark ? '244,114,182' : '219,39,119'
+      const inkAlpha = dark ? 0.5 : 0.3
 
       const cx = W > 760 ? W * 0.68 : W * 0.5
       const cy = H * 0.46
@@ -105,9 +106,12 @@ export function Orb() {
       for (let i = 0; i < N; i++) {
         const q = proj[i]
         const warm = i % 9 === 0
-        ctx.fillStyle = warm
-          ? `rgba(${goldDot},${q[2] * 0.95})`
-          : `rgba(${inkDot},${q[2] * inkAlpha})`
+        const hot = i % 23 === 0
+        ctx.fillStyle = hot
+          ? `rgba(${pinkDot},${q[2] * 0.9})`
+          : warm
+            ? `rgba(${goldDot},${q[2] * 0.95})`
+            : `rgba(${inkDot},${q[2] * inkAlpha})`
         const s = (warm ? 1.7 : 1.1) * q[3]
         ctx.beginPath()
         ctx.arc(q[0], q[1], s, 0, 6.283)

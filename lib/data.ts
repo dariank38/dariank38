@@ -315,7 +315,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Supakon',
     description:
       'Enterprise-grade AI expert matching platform connecting organizations with pre-vetted AI specialists. LangChain-orchestrated multi-model evaluation pipeline (LLaMA, Mistral, GPT, Gemini) for parallel expert scoring across technical depth, domain specificity, and communication clarity. Hybrid fraud detection (LLM + ML anomaly detection) and RAG-powered semantic matching using vector embeddings.',
-    tags: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'LLaMA', 'Mistral', 'AWS', 'Python', 'Next.js', 'TypeScript'],
+    tags: ['LangChain', 'RAG', 'Pinecone', 'Weaviate', 'GPT', 'Gemini', 'LLaMA', 'Mistral', 'AWS', 'Python', 'Next.js', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Docker', 'Embedding Pipelines', 'Async Pipelines'],
     icon: 'brain',
     company: 'NeuralBridge',
     url: 'https://supakon.com',
@@ -328,7 +328,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MR Pay',
     description:
       'Digital payment platform similar to Alipay. Designed secure transaction flows, multi-party settlement logic, and scalable backend services for web and mobile. Blockchain-inspired transaction signing for payment security.',
-    tags: ['Node.js', 'MongoDB', 'Oracle DB', 'Blockchain'],
+    tags: ['Node.js', 'MongoDB', 'Oracle DB', 'Blockchain', 'Express', 'Redis', 'JWT Auth', 'REST API', 'Microservices', 'Transaction Security'],
     icon: 'credit-card',
     company: 'NeuralBridge',
     image: '/projects/mr-pay.jpg',
@@ -340,7 +340,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MR Bay',
     description:
       'Full-scale e-commerce ecosystem comparable to Alibaba. Order processing, vendor management, inventory, and payment integration across multiple storefronts.',
-    tags: ['React', 'Node.js', 'MongoDB', 'AWS'],
+    tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Redis', 'REST API', 'Microservices', 'CI/CD', 'Inventory Systems', 'Admin Dashboards'],
     icon: 'file-text',
     company: 'NeuralBridge',
     image: '/projects/mr-bay.jpg',
@@ -352,7 +352,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'StrongGate',
     description:
       'Computer vision pipeline processing 280 Hikvision camera feeds to control physical access gates via PLC integration. YOLO-based object detection and OpenCV image processing for license plate recognition. Also built a thermal-imaging attendance system during COVID.',
-    tags: ['Computer Vision', 'YOLO', 'OpenCV', 'TensorFlow', 'Face Detection', 'Object Detection', 'PLC', 'HIKVision SDK', 'C++'],
+    tags: ['Computer Vision', 'YOLO', 'OpenCV', 'TensorFlow', 'Face Detection', 'Object Detection', 'PLC', 'HIKVision SDK', 'C++', 'Python', 'Keras', 'RTSP Streaming', 'Multithreading', 'Thermal Imaging'],
     icon: 'camera',
     company: 'NeuralBridge',
     image: '/projects/stronggate.jpg',
@@ -364,7 +364,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Author Wizard',
     description:
       'AI book writing assistant with multi-stage prompt pipelines (outline generation → structured drafting → revision loops) using GPT and Gemini. Maintains narrative consistency across chapters through context window management and stateful prompt chaining.',
-    tags: ['GPT', 'Gemini', 'React', 'WordPress', 'Prompt Engineering'],
+    tags: ['GPT', 'Gemini', 'React', 'WordPress', 'Prompt Engineering', 'PHP', 'Node.js', 'Context Window Management', 'Stateful Prompt Chaining'],
     icon: 'file-text',
     company: 'NeuralBridge',
     url: 'https://bookwiz.io',
@@ -377,7 +377,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Audie.ai',
     description:
       'AI audiobook generation platform. Authors load books as text files, assign character voices to dialogue lines, and automatically generate complete audiobooks. Integrates ElevenLabs APIs with WordPress.',
-    tags: ['ElevenLabs', 'WordPress', 'AI', 'Audio'],
+    tags: ['ElevenLabs', 'WordPress', 'AI', 'Audio', 'PHP', 'Text-to-Speech', 'Audio Processing', 'REST API', 'Dialogue Detection'],
     icon: 'file-text',
     company: 'NeuralBridge',
     url: 'https://audie.ai',
@@ -390,7 +390,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'HindSight',
     description:
       'Real-time cryptocurrency analytics platform (BubbleMap-style) with sub-second update latency on on-chain data streams. Unsupervised anomaly detection flags unusual wallet clustering and transaction velocity patterns.',
-    tags: ['Node.js', 'WebSocket', 'React', 'D3.js', 'Anomaly Detection'],
+    tags: ['Node.js', 'WebSocket', 'React', 'D3.js', 'Anomaly Detection', 'TypeScript', 'Redis', 'Web3.js', 'Real-time Systems', 'Data Visualization'],
     icon: 'brain',
     company: 'NeuralBridge',
     url: 'https://hindsight.vip',
@@ -403,7 +403,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Lust AI',
     description:
       'AI character generation and chat platform with image generation (pose/style controls) and conversational AI companions. Powered by SPICE AI tools, currently at v4.9.',
-    tags: ['AI', 'Image Generation', 'Chat', 'React', 'SPICE'],
+    tags: ['AI', 'Image Generation', 'Chat', 'React', 'SPICE', 'Node.js', 'WebSocket', 'Diffusion Models', 'Conversational AI', 'Session Memory'],
     icon: 'brain',
     company: 'NeuralBridge',
     url: 'https://lustai.app',
@@ -415,7 +415,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MindAI SwapBot',
     description:
       'LLM-driven Telegram bot that interprets natural language swap requests and executes on-chain transactions. Intent-parsing pipelines handle ambiguous user inputs gracefully — critical for financial actions where misinterpretation has real consequences.',
-    tags: ['LLM', 'Telegram', 'Blockchain', 'Web3', 'Intent Parsing'],
+    tags: ['LLM', 'Telegram', 'Blockchain', 'Web3', 'Intent Parsing', 'Node.js', 'Ethers.js', 'Telegram Bot API', 'Prompt Engineering', 'On-chain Execution'],
     icon: 'brain',
     company: 'NeuralBridge',
     image: '/projects/mindai-swapbot.jpg',
@@ -427,7 +427,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'DialogueDaily',
     description:
       'Relationship and marriage counseling platform with content delivery and subscription workflows. The nine-year project — started on Upwork, survived two accidents, and finally delivered.',
-    tags: ['React', 'Node.js', 'Subscription', 'Content Delivery'],
+    tags: ['React', 'Node.js', 'Subscription', 'Content Delivery', 'MongoDB', 'AWS', 'Payment Integration', 'Push Notifications', 'Mobile Web'],
     icon: 'file-text',
     company: 'NeuralBridge',
     url: 'https://dialoguedaily.app',
@@ -440,7 +440,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MR USBLock',
     description:
       'Digital asset access control system with ML-based behavioral anomaly detection. Flags access pattern deviations before they escalate to breaches.',
-    tags: ['Security', 'ML', 'Anomaly Detection', 'Access Control'],
+    tags: ['Security', 'ML', 'Anomaly Detection', 'Access Control', 'C#', 'Windows Programming', 'Scikit-learn', 'USB Device Control', 'Behavioral Analytics'],
     icon: 'camera',
     company: 'NeuralBridge',
     image: '/projects/mr-usblock.jpg',
@@ -452,7 +452,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MemoLabs',
     description:
       'BRC-20 inscription platform and airdrop point system. Built frontend platform and website for blockchain inscription services.',
-    tags: ['BRC-20', 'Blockchain', 'Web3', 'Frontend'],
+    tags: ['BRC-20', 'Blockchain', 'Web3', 'Frontend', 'React', 'TypeScript', 'Bitcoin', 'Wallet Integration', 'Airdrop Systems'],
     icon: 'credit-card',
     company: 'NeuralBridge',
     url: 'https://memolabs.org',
@@ -465,7 +465,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Drive3',
     description:
       'Web3 decentralized storage platform for secure, distributed file storage on the blockchain.',
-    tags: ['Web3', 'Storage', 'Blockchain', 'Decentralized'],
+    tags: ['Web3', 'Storage', 'Blockchain', 'Decentralized', 'React', 'Smart Contracts', 'Distributed Systems', 'File Encryption'],
     icon: 'file-text',
     company: 'NeuralBridge',
     challenge: 'Centralized storage has single points of failure. Building a Web3 storage platform that distributes files across a decentralized network while maintaining reliability and speed.',
@@ -476,7 +476,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Reshoper',
     description:
       'Enterprise-grade Restaurant & Shopping Mall Management Platform covering web and app interfaces. Desktop-based restaurant management software with POS integration.',
-    tags: ['React', 'Node.js', 'Enterprise', 'POS'],
+    tags: ['React', 'Node.js', 'Enterprise', 'POS', 'C#', 'WinForms', 'MongoDB', 'REST API', 'Desktop Software', 'Reporting Dashboards'],
     icon: 'file-text',
     company: 'NeuralBridge',
     image: '/projects/reshoper.jpg',
@@ -488,7 +488,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MR Eye',
     description:
       'Endpoint monitoring solution with screen recording, keystroke tracking, and behavioral anomaly detection for enterprise security oversight.',
-    tags: ['Security', 'Monitoring', 'Anomaly Detection', 'Screen Recording'],
+    tags: ['Security', 'Monitoring', 'Anomaly Detection', 'Screen Recording', 'C++', 'Win32 API', 'Windows Hooks', 'Endpoint Agents', 'Low-level Windows'],
     icon: 'camera',
     company: 'NovaCircuit',
     image: '/projects/mr-eye.jpg',
@@ -500,7 +500,7 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'MeetUp',
     description:
       'Windows desktop video conferencing application with real-time audio/video streaming. Also built a web-based version using Node.js, MongoDB, and WebRTC.',
-    tags: ['WebRTC', 'Node.js', 'MongoDB', 'Windows'],
+    tags: ['WebRTC', 'Node.js', 'MongoDB', 'Windows', 'C++', 'Socket Programming', 'Audio/Video Streaming', 'Windows Programming'],
     icon: 'brain',
     company: 'NovaCircuit',
     image: '/projects/meetup.jpg',
@@ -512,12 +512,144 @@ export const projectHighlights: ProjectHighlight[] = [
     title: 'Lottery Platform',
     description:
       'High-concurrency lottery platform built in Rust with Svelte frontend and PostgreSQL. Handles 100,000+ simultaneous ticket purchases with sub-second latency. Transactional integrity is non-negotiable — every ticket must be atomic, every draw must be verifiable, and every user must see consistent state.',
-    tags: ['Rust', 'Svelte', 'PostgreSQL', 'High Concurrency', 'Transactional Integrity', 'WebSocket'],
+    tags: ['Rust', 'Svelte', 'PostgreSQL', 'High Concurrency', 'Transactional Integrity', 'WebSocket', 'Tokio', 'Async Rust', 'Connection Pooling', 'Load Testing'],
     icon: 'credit-card',
     company: 'NeuralBridge',
     challenge: '100,000 users buying lottery tickets simultaneously creates extreme write contention on the database. Every ticket purchase must be atomic — no double-sales, no lost tickets, no race conditions. Traditional web frameworks buckle under this load, and a single failed transaction means a real user loses money.',
     solution: 'Built the backend in Rust for zero-cost abstractions and predictable memory management. PostgreSQL handles transactional integrity with row-level locking and SERIALIZABLE isolation for ticket sales. Connection pooling with bounded async tasks prevents resource exhaustion under peak load. Svelte frontend delivers a lightweight client-side experience with real-time WebSocket updates for draw results and ticket status.',
     techniques: ['Rust async runtime for high-concurrency handling', 'PostgreSQL row-level locking with SERIALIZABLE isolation', 'Bounded connection pooling to prevent resource exhaustion', 'WebSocket real-time draw updates', 'Atomic ticket purchase transactions', 'Svelte reactive frontend with minimal bundle size'],
+  },
+  {
+    title: 'Contact Aggregation System',
+    description:
+      'Contact information aggregation platform combining automated scraping, validation, and deduplication pipelines. Designed for large-scale outreach data collection with scheduling and export workflows.',
+    tags: ['Python', 'Web Scraping', 'Selenium', 'Automation', 'Data Pipelines', 'Deduplication', 'Scheduling'],
+    icon: 'file-text',
+    company: 'NeuralBridge',
+    image: '/projects/email-scraper.jpg',
+    challenge: 'Collecting contact data across thousands of heterogeneous sources without getting blocked, while keeping the resulting dataset clean enough to actually use.',
+    solution: 'Built rotating, rate-limited scraping workers with headless-browser fallbacks for JavaScript-heavy sites, then ran every record through validation and fuzzy deduplication before export.',
+    techniques: ['Headless-browser scraping with rate limiting', 'Validation and fuzzy deduplication pipelines', 'Scheduled collection jobs with retry logic'],
+  },
+  {
+    title: 'TSolution',
+    description:
+      'Office suite built on top of LibreOffice. Served as PM and led development of the HWP 5.0 document parsing module and the main UI. The printed LibreOffice class and module documentation covered three full office walls.',
+    tags: ['LibreOffice', 'C++', 'HWP 5.0', 'UNO API', 'Document Parsing', 'Project Management', 'Desktop Software'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/tsolution.jpg',
+    challenge: 'HWP is a proprietary Korean document format with sparse documentation, and LibreOffice’s internal module architecture is famously vast — the printed class documentation covered three office walls.',
+    solution: 'Reverse-engineered the HWP 5.0 binary format against the published spec, mapped it onto LibreOffice’s document model through the UNO API, and led the module and main UI development as PM.',
+    techniques: ['HWP 5.0 binary format parsing', 'LibreOffice UNO API integration', 'Document model mapping', 'Team leadership as PM'],
+  },
+  {
+    title: 'KakaoTalk Desktop Client',
+    description:
+      'Desktop chat application for KakaoTalk, Korea’s dominant messenger, with messaging automation capabilities built on top of protocol analysis.',
+    tags: ['C#', 'Windows Programming', 'Protocol Analysis', 'Messaging Automation', 'Reverse Engineering', 'Desktop Software'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/kakaotalk.jpg',
+    challenge: 'Building a desktop client and automation layer for a closed, proprietary messaging protocol meant reverse-engineering the wire format and keeping up with server-side changes without any official API.',
+    solution: 'Analyzed the KakaoTalk protocol through packet inspection, implemented a compatible desktop client in C# on Windows, and layered messaging automation on top with graceful handling of protocol updates.',
+    techniques: ['Protocol reverse engineering via packet analysis', 'Windows desktop client in C#', 'Messaging automation layer', 'Resilience to server-side protocol changes'],
+  },
+  {
+    title: 'ArchDic',
+    description:
+      'Offline dictionary application of architectural terms for architects. What looked like a simple lookup tool turned out to rest on corpus theory at its core — the first project that taught how linguistic data structures really work.',
+    tags: ['C++', 'Qt', 'Corpus Theory', 'Offline Search', 'Trie / Indexing', 'Desktop Software', 'Windows Programming'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/archdic.jpg',
+    challenge: 'A dictionary app sounds trivial until you need fast offline lookup over a large domain-specific corpus with fuzzy matching — corpus theory turned out to be at the heart of it.',
+    solution: 'Built an indexed offline dictionary in C++/Qt with prefix and fuzzy search over a curated architectural-terms corpus, packaged for desktop with no network dependency.',
+    techniques: ['Corpus-based dictionary construction', 'Indexed offline full-text search', 'Prefix and fuzzy matching', 'Qt desktop packaging'],
+  },
+  {
+    title: '3D Modeling Tool (Revit)',
+    description:
+      'A 3D modeling tool integrated with the Autodesk Revit SDK, built during the KOAST internship. The project was the first hands-on lesson in working inside a large third-party SDK and its object model.',
+    tags: ['C#', 'Autodesk Revit SDK', '3D Modeling', 'BIM', '.NET', 'Third-party SDK Integration'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/3d-builder.jpg',
+    challenge: 'Integrating with the Autodesk Revit SDK meant learning a massive, opinionated BIM object model and API surface, then bending it toward custom 3D modeling behavior.',
+    solution: 'Studied the Revit SDK object model, built a modeling tool on top of its .NET API, and mapped custom modeling operations onto Revit’s document and element structures.',
+    techniques: ['Autodesk Revit SDK / .NET API integration', 'BIM object-model mapping', 'Custom 3D modeling operations'],
+  },
+  {
+    title: 'Cocos2d Game Ports',
+    description:
+      'Ported two SWF Flash games (Mortal Combat, Fighter Flight) to Cocos2d for Android and iOS during the KOAST internship — the assignment that followed the legendary Tetris code-golf competition.',
+    tags: ['Cocos2D', 'C++', 'Android', 'iOS', 'Game Development', 'SWF Porting', 'Cross-platform'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/cocos2d-games.jpg',
+    challenge: 'Reimplementing Flash/SWF games on Cocos2d for both Android and iOS meant rebuilding game logic and asset pipelines that originally targeted the Flash runtime, on two mobile platforms at once.',
+    solution: 'Recreated the games’ mechanics and scene flow in Cocos2d, rebuilt the asset and animation pipeline for mobile, and shipped to both Android and iOS from a shared C++ codebase.',
+    techniques: ['SWF-to-Cocos2d game reimplementation', 'Shared C++ codebase for Android + iOS', 'Mobile asset and animation pipeline'],
+  },
+  {
+    title: 'CAPTCHA Recognition',
+    description:
+      'A CAPTCHA auto-recognition and bypass system built right as TensorFlow and Keras were first emerging. Combined classic image processing with early deep-learning models to read distorted challenge text.',
+    tags: ['TensorFlow', 'Keras', 'Python', 'Image Processing', 'OpenCV', 'CNN', 'OCR', 'Deep Learning'],
+    icon: 'brain',
+    company: 'NovaCircuit',
+    image: '/projects/tensorflow-cap.jpg',
+    challenge: 'Reading deliberately distorted CAPTCHA text required tolerance to noise, warping, and overlapping characters — well beyond what template matching could handle, at a time when deep-learning tooling was brand new.',
+    solution: 'Built an image-processing front end (denoise, segment, normalize) feeding CNN models trained in TensorFlow/Keras to recognize characters, iterating on architectures as the frameworks matured.',
+    techniques: ['Image preprocessing and character segmentation', 'CNN-based character recognition (TensorFlow/Keras)', 'Synthetic training-data generation', 'End-to-end recognition pipeline'],
+  },
+  {
+    title: 'APK Reverse Engineering',
+    description:
+      'Android APK and Unity APK reverse engineering — analyzing native Android apps and Unity builds (4.x–5.6) to understand, audit, and rebuild their behavior.',
+    tags: ['Android', 'Reverse Engineering', 'Unity', 'Smali / DEX', 'Native Code', 'Security Analysis', 'Java'],
+    icon: 'camera',
+    company: 'NovaCircuit',
+    image: '/projects/apk-reverse.jpg',
+    challenge: 'Understanding shipped Android and Unity applications with no source meant decompiling, deobfuscating, and reconstructing program behavior across both Dalvik bytecode and Unity’s IL2CPP/Mono internals.',
+    solution: 'Reverse-engineered APKs through smali/DEX analysis and native inspection, mapped Unity 4.x–5.6 build internals, and reconstructed the relevant logic for auditing and rebuilding.',
+    techniques: ['Smali / DEX decompilation and analysis', 'Unity 4.x–5.6 build internals (Mono/IL2CPP)', 'Native code inspection', 'Behavior reconstruction'],
+  },
+  {
+    title: 'Web Conferencing System',
+    description:
+      'A web-based video conferencing system built on Node.js, MongoDB, and WebRTC — the browser counterpart to the MeetUp desktop client, delivering real-time multi-party audio and video.',
+    tags: ['WebRTC', 'Node.js', 'MongoDB', 'Socket.io', 'Real-time Systems', 'Audio/Video Streaming', 'JavaScript'],
+    icon: 'brain',
+    company: 'NovaCircuit',
+    image: '/projects/web-conference.jpg',
+    challenge: 'Delivering low-latency, multi-party audio and video in the browser required managing WebRTC peer connections, signaling, and media negotiation reliably across networks and devices.',
+    solution: 'Built a Node.js signaling server with Socket.io, orchestrated WebRTC peer connections for multi-party rooms, and used MongoDB for room and session state.',
+    techniques: ['WebRTC peer-connection orchestration', 'Node.js + Socket.io signaling server', 'Multi-party room management', 'Media negotiation across networks'],
+  },
+  {
+    title: 'Sales Management System',
+    description:
+      'A product sales management platform built for company operations at NovaCircuit — covering orders, inventory, and reporting for internal sales workflows.',
+    tags: ['ASP.NET', 'C#', 'SQL Server', 'Web Forms', 'Reporting', 'Enterprise Software'],
+    icon: 'file-text',
+    company: 'NovaCircuit',
+    image: '/projects/sales-mgmt.jpg',
+    challenge: 'Internal sales operations needed a single system tying together orders, inventory, and reporting, reliable enough to run day-to-day business.',
+    solution: 'Built a full sales management platform on ASP.NET/C# with SQL Server, covering order entry, inventory tracking, and management reporting for internal teams.',
+    techniques: ['ASP.NET / C# business application', 'SQL Server data modeling', 'Order and inventory workflows', 'Management reporting'],
+  },
+  {
+    title: 'Internal Management System',
+    description:
+      'A remote internal security and operations management system built at NovaCircuit, giving administrators centralized oversight of internal resources and activity.',
+    tags: ['ASP.NET', 'IIS', 'Node.js', 'C#', 'Security', 'Admin Dashboards', 'Enterprise Software'],
+    icon: 'camera',
+    company: 'NovaCircuit',
+    image: '/projects/internal-mgmt.jpg',
+    challenge: 'The company needed centralized, remote oversight of internal systems and security-relevant activity, accessible to administrators without exposing sensitive infrastructure.',
+    solution: 'Built internal management and security-oversight tooling on ASP.NET/IIS with Node.js services, providing administrators a centralized dashboard over internal resources and activity.',
+    techniques: ['ASP.NET / IIS internal tooling', 'Node.js supporting services', 'Centralized admin dashboards', 'Remote security oversight'],
   },
 ]
 

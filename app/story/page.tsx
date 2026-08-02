@@ -1,4 +1,4 @@
-import { Reveal } from '@/components/reveal'
+import { Reveal } from '@/components/fx'
 import { storyParagraphs, storyTitle } from '@/lib/data'
 
 export const metadata = {
@@ -28,11 +28,14 @@ export default function StoryPage() {
   return (
     <>
       {/* Header */}
-      <section className="border-b border-line pb-14 pt-36">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="relative overflow-hidden border-b border-line pb-14 pt-36">
+        <div className="aurora" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <p className="eyebrow">The full journey · 23 paragraphs · 12 min</p>
-            <h1 className="display mt-3 max-w-4xl text-4xl sm:text-6xl">{storyTitle}</h1>
+            <h1 className="display mt-3 max-w-4xl text-4xl sm:text-6xl">
+              <span className="text-grad">{storyTitle}</span>
+            </h1>
           </Reveal>
         </div>
       </section>
@@ -53,7 +56,7 @@ export default function StoryPage() {
 
             {/* Pull quote breaker */}
             <Reveal className="my-16">
-              <blockquote className="border-l-2 border-gold pl-7 text-2xl font-medium leading-relaxed tracking-tight text-balance">
+              <blockquote className="border-l-2 border-accent pl-7 text-2xl font-medium leading-relaxed tracking-tight text-balance">
                 “I would never claim experience I don&apos;t have, and the things I have done, I
                 remember with precision.”
               </blockquote>
@@ -70,7 +73,7 @@ export default function StoryPage() {
             {/* Final section */}
             <Reveal className="mt-16">
               <div className="rounded-2xl border border-line bg-background-2 p-8 sm:p-10">
-                <p className="mono-label mb-6 text-gold">ON SPECIALTY — THE HONEST ANSWER</p>
+                <p className="mono-label mb-6 text-accent">ON SPECIALTY — THE HONEST ANSWER</p>
                 <article className="prose-craft text-[1.05rem]">
                   {finalPart.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
@@ -83,11 +86,11 @@ export default function StoryPage() {
           {/* Sticky sidebar */}
           <Reveal delay={0.15}>
             <div className="sticky top-24">
-              <p className="mono-label mb-5 text-gold">KEY MOMENTS</p>
+              <p className="mono-label mb-5 text-accent">KEY MOMENTS</p>
               <div className="border-l border-line font-mono text-[0.78rem] leading-relaxed">
                 {keyMoments.map((m) => (
-                  <div key={m.label} className="-ml-px border-l border-transparent py-2.5 pl-5 hover:border-gold">
-                    <p className="text-gold">{m.year}</p>
+                  <div key={m.label} className="-ml-px border-l border-transparent py-2.5 pl-5 hover:border-accent">
+                    <p className="text-accent">{m.year}</p>
                     <p className="mt-0.5 font-sans text-sm font-medium text-foreground">{m.label}</p>
                     <p className="text-dim">{m.detail}</p>
                   </div>

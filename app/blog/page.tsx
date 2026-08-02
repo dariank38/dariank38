@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { Reveal } from '@/components/reveal'
+import { Reveal } from '@/components/fx'
 import { blogPosts, blogPostContents, storyParagraphs } from '@/lib/data'
 
 export const metadata = {
@@ -35,11 +35,14 @@ export default function BlogPage() {
   return (
     <>
       {/* Header */}
-      <section className="border-b border-line pb-14 pt-36">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="relative overflow-hidden border-b border-line pb-14 pt-36">
+        <div className="aurora" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <p className="eyebrow">Writing</p>
-            <h1 className="display mt-3 text-4xl sm:text-6xl">Stories &amp; lessons.</h1>
+            <h1 className="display mt-3 text-4xl sm:text-6xl">
+              Stories &amp; <span className="text-grad">lessons.</span>
+            </h1>
             <p className="mt-5 max-w-2xl leading-relaxed text-dim">
               Project write-ups, career stories, and lessons learned from decades in the trenches.
             </p>
@@ -55,14 +58,14 @@ export default function BlogPage() {
               href={featured.slug === 'story' ? '/story' : `/blog/${featured.slug}`}
               className="group block border-b border-line pb-14"
             >
-              <p className="mono-label text-gold">
+              <p className="mono-label text-accent">
                 FEATURED · {featured.date} · {readTimeFor(featured.slug, featured.excerpt)} MIN
               </p>
-              <h2 className="display mt-4 max-w-3xl text-3xl transition-colors group-hover:text-gold sm:text-5xl">
+              <h2 className="display mt-4 max-w-3xl text-3xl transition-colors group-hover:text-accent sm:text-5xl">
                 {featured.title}
               </h2>
               <p className="mt-5 max-w-[60ch] leading-relaxed text-dim">{featured.excerpt}</p>
-              <p className="mt-6 inline-flex items-center gap-2 font-medium text-gold">
+              <p className="mt-6 inline-flex items-center gap-2 font-medium text-accent">
                 Read <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </p>
             </Link>
@@ -78,7 +81,7 @@ export default function BlogPage() {
                   className="group grid grid-cols-[1fr_auto] items-baseline gap-6 border-b border-line px-1 py-8 transition-[padding,background-color] duration-300 hover:bg-background-2 hover:pl-4"
                 >
                   <span>
-                    <span className="block text-xl font-semibold tracking-tight transition-colors group-hover:text-gold sm:text-2xl">
+                    <span className="block text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-2xl">
                       {post.title}
                     </span>
                     <span className="mt-2 block max-w-[60ch] text-sm leading-relaxed text-dim">

@@ -1,165 +1,176 @@
 import Link from 'next/link'
-import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react'
 import { Orb } from '@/components/orb'
 import { Portrait } from '@/components/portrait'
-import { Reveal } from '@/components/reveal'
-import { WorkList, type WorkItem } from '@/components/work-list'
+import { Reveal, MountReveal, Stagger, StaggerItem, Counter, Marquee } from '@/components/fx'
+import { FeaturedCard, type FeaturedProject } from '@/components/featured-card'
 import { experiences, projectHighlights, skillCategories, testimonials } from '@/lib/data'
-import { SITE_CONFIG } from '@/lib/constants'
 
-const selectedWork: WorkItem[] = [
-  { title: 'Supakon', role: 'AI expert marketplace · 4-model evaluation', year: '2024', href: 'https://supakon.com', external: true, image: '/projects/supakon.jpg' },
-  { title: 'HindSight', role: 'Sub-second on-chain analytics', year: '2024', href: 'https://hindsight.vip', external: true, image: '/projects/hindsight.jpg' },
-  { title: 'Author Wizard', role: 'AI book-writing pipelines', year: '2023', href: 'https://bookwiz.io', external: true, image: '/projects/author-wizard.jpg' },
-  { title: 'Audie.ai', role: 'Automated audiobook generation', year: '2023', href: 'https://audie.ai', external: true, image: '/projects/audie-ai.jpg' },
-  { title: 'StrongGate', role: '280-camera vision · PLC gate control', year: '2021', href: '/projects', image: '/projects/stronggate.jpg' },
-  { title: 'MR Pay', role: 'Alipay-scale payments · signed transactions', year: '2020', href: '/projects', image: '/projects/mr-pay.jpg' },
+const featured: FeaturedProject[] = [
+  { title: 'Supakon', blurb: 'AI expert marketplace where four models — LLaMA, Mistral, GPT, Gemini — score every candidate in parallel, with RAG matching and hybrid fraud detection.', year: '2024', href: 'https://supakon.com', image: '/projects/supakon.jpg', tags: ['LangChain', 'RAG', 'Pinecone', 'Next.js'] },
+  { title: 'StrongGate', blurb: '280 Hikvision cameras feeding a YOLO detection pipeline that opens and closes physical gates through PLC control — with fail-safe defaults.', year: '2021', href: undefined, image: '/projects/stronggate.jpg', tags: ['YOLO', 'OpenCV', 'PLC', 'C++'] },
+  { title: 'HindSight', blurb: 'Real-time on-chain analytics with sub-second latency and unsupervised anomaly detection on wallet clustering, rendered with D3.', year: '2024', href: 'https://hindsight.vip', image: '/projects/hindsight.jpg', tags: ['WebSocket', 'D3.js', 'Node.js', 'Redis'] },
+  { title: 'Author Wizard', blurb: 'AI book-writing assistant — outline, draft, revise — with stateful prompt chains that keep a whole book’s characters consistent.', year: '2023', href: 'https://bookwiz.io', image: '/projects/author-wizard.jpg', tags: ['GPT', 'Gemini', 'React', 'WordPress'] },
+  { title: 'Audie.ai', blurb: 'Authors upload a manuscript, map character voices to ElevenLabs, and a full audiobook comes out — narration and dialogue auto-detected.', year: '2023', href: 'https://audie.ai', image: '/projects/audie-ai.jpg', tags: ['ElevenLabs', 'TTS', 'WordPress', 'PHP'] },
+  { title: 'MR Pay', blurb: 'Alipay-scale digital payments with blockchain-inspired transaction signing, multi-party settlement, and scalable backend services.', year: '2020', href: undefined, image: '/projects/mr-pay.jpg', tags: ['Node.js', 'Oracle DB', 'Blockchain', 'Redis'] },
 ]
 
 const storyMoments = [
-  { year: '1994', text: 'born; Windows 95 arrives a year later' },
+  { year: '1994', text: 'Born a year before Windows 95' },
   { year: 'age 14', text: 'C/C++, Win32, a VNC-style remote tool' },
-  { year: '2015', text: 'the power outage; main.cpp lost, lesson permanent' },
+  { year: '2015', text: 'The power outage — main.cpp lost, lesson permanent' },
   { year: '2017', text: 'LibreOffice docs covering three office walls' },
   { year: '2020', text: '280 cameras opening real gates' },
-  { year: '2024', text: 'a nine-year promise, finally shipped' },
+  { year: '2024', text: 'A nine-year promise, finally shipped' },
 ]
 
 const exploreLinks = [
   { href: '/resume', title: 'Resume', note: 'Experience, skills, education — printable' },
   { href: '/blog', title: 'Blog', note: 'Nine Years, and Uncle — and more' },
-  { href: '/profile', title: 'Profile', note: 'Psychometrics & ENFJ-T, if you like data on people' },
+  { href: '/profile', title: 'Profile', note: 'Psychometrics & ENFJ-T, data on the person' },
 ]
 
 export default function Home() {
   const technologiesCount = skillCategories.reduce((acc, c) => acc + c.skills.length, 0)
+  const marqueeSkills = skillCategories.flatMap((c) => c.skills)
+  const half = Math.ceil(marqueeSkills.length / 2)
 
   return (
     <>
       {/* ================= HERO ================= */}
       <header className="relative flex min-h-svh items-center overflow-hidden">
+        <div className="bg-grid absolute inset-0 opacity-60" aria-hidden />
         <Orb />
         <div className="hero-fade pointer-events-none absolute inset-0" />
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-16 sm:px-8 lg:px-10">
-          <div className="flex items-center gap-4">
-            <Portrait size={56} priority />
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/60 px-4 py-2 font-mono text-[0.72rem] tracking-[0.14em] text-dim">
-              <i className="status-dot" />
-              AVAILABLE FOR NEW OPPORTUNITIES
-            </span>
-          </div>
-          <h1 className="display mt-7 text-5xl sm:text-7xl lg:text-[6.4rem]">
-            {SITE_CONFIG.name}
-            <br />
-            <span className="text-faint">builds what others call impossible.</span>
-          </h1>
-          <p className="mt-7 max-w-[44ch] text-lg leading-relaxed text-dim">
-            Software engineer since before it was a job —{' '}
-            <b className="font-semibold text-foreground">
-              Windows internals to multi-model AI pipelines
-            </b>
-            , with payments platforms, 280-camera vision systems, and eighteen shipped products in
-            between.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              href="#work"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-gold-bright"
-            >
-              Selected work <ArrowDown className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/story"
-              className="inline-flex items-center gap-2 rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-dim transition-colors hover:border-faint hover:text-foreground"
-            >
-              Read the story
-            </Link>
-          </div>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-20 sm:px-8 lg:px-10">
+          <MountReveal>
+            <div className="flex items-center gap-4">
+              <Portrait size={52} priority />
+              <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/60 px-4 py-2 font-mono text-[0.72rem] tracking-[0.14em] text-dim backdrop-blur">
+                <i className="status-dot" />
+                AVAILABLE FOR NEW OPPORTUNITIES
+              </span>
+            </div>
+          </MountReveal>
+          <MountReveal delay={0.08}>
+            <h1 className="display mt-8 text-6xl sm:text-8xl lg:text-[8.5rem]">
+              <span className="text-grad">Darian King</span>
+            </h1>
+          </MountReveal>
+          <MountReveal delay={0.16}>
+            <p className="display mt-1 text-3xl text-foreground/90 sm:text-5xl lg:text-6xl">
+              builds what others call impossible.
+            </p>
+          </MountReveal>
+          <MountReveal delay={0.24}>
+            <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-dim">
+              Software engineer since before it was a job —{' '}
+              <span className="font-semibold text-foreground">
+                Windows internals to multi-model AI pipelines
+              </span>
+              , with payments platforms, 280-camera vision systems, and{' '}
+              <span className="font-semibold text-foreground">{projectHighlights.length} shipped products</span>{' '}
+              in between.
+            </p>
+          </MountReveal>
+          <MountReveal delay={0.32}>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link href="/projects" className="btn-primary">
+                View the work <ArrowDown className="h-4 w-4" />
+              </Link>
+              <Link href="/story" className="btn-ghost">
+                Read the story
+              </Link>
+            </div>
+          </MountReveal>
         </div>
         <div className="absolute inset-x-0 bottom-6 z-10">
-          <div className="mx-auto flex max-w-6xl justify-between px-5 font-mono text-[0.68rem] tracking-[0.18em] text-faint sm:px-8 lg:px-10">
+          <div className="mx-auto flex max-w-7xl justify-between px-5 font-mono text-[0.68rem] tracking-[0.18em] text-faint sm:px-8 lg:px-10">
             <span>EST. 1994 — FIRST LINE OF PASCAL</span>
-            <span>SCROLL ↓</span>
+            <span className="animate-pulse">SCROLL ↓</span>
           </div>
         </div>
       </header>
 
-      {/* ================= STATS ================= */}
-      <div className="border-y border-line bg-background-2">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 sm:grid-cols-4">
-          {[
-            { value: '10', plus: true, label: 'years professional' },
-            { value: String(projectHighlights.length), label: 'products shipped' },
-            { value: String(technologiesCount), label: 'technologies' },
-            { value: '280', label: 'cameras, one gate' },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className={
-                'px-4 py-9 text-center sm:border-l sm:border-line ' +
-                (i === 0 ? 'sm:border-l-0 ' : '') +
-                (i % 2 === 1 ? 'max-sm:border-l max-sm:border-line ' : '')
-              }
-            >
-              <b className="block text-3xl font-semibold tracking-tight tabular-nums sm:text-4xl">
-                {stat.value}
-                {stat.plus && <em className="not-italic text-gold">+</em>}
-              </b>
-              <span className="mono-label">{stat.label}</span>
-            </div>
-          ))}
+      {/* ================= SKILL MARQUEE ================= */}
+      <section className="border-y border-line bg-background-2 py-8">
+        <div className="flex flex-col gap-3">
+          <Marquee items={marqueeSkills.slice(0, half)} duration={70} />
+          <Marquee items={marqueeSkills.slice(half)} duration={85} reverse />
         </div>
-      </div>
+      </section>
 
-      {/* ================= WORK ================= */}
-      <section id="work" className="py-28">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      {/* ================= STATS ================= */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { value: 10, suffix: '+', label: 'years professional' },
+              { value: projectHighlights.length, suffix: '', label: 'products shipped' },
+              { value: technologiesCount, suffix: '', label: 'technologies' },
+              { value: 280, suffix: '', label: 'cameras, one gate' },
+            ].map((stat) => (
+              <StaggerItem key={stat.label}>
+                <div className="gcard flex h-full flex-col items-center justify-center px-4 py-9 text-center">
+                  <b className="display text-4xl sm:text-5xl">
+                    <span className="text-grad">
+                      <Counter value={stat.value} suffix={stat.suffix} />
+                    </span>
+                  </b>
+                  <span className="mono-label mt-2">{stat.label}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ================= FEATURED WORK ================= */}
+      <section id="work" className="py-16">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
-            <div className="mb-12 flex items-baseline justify-between gap-4">
+            <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="eyebrow">Selected work</p>
-                <h2 className="display mt-2 text-3xl sm:text-5xl">Built, shipped, in production.</h2>
+                <h2 className="display mt-3 text-4xl sm:text-6xl">
+                  Built, shipped, <span className="text-grad">in production.</span>
+                </h2>
               </div>
-              <span className="mono-label shrink-0">06 / {projectHighlights.length}</span>
+              <Link href="/projects" className="btn-ghost">
+                All {projectHighlights.length} projects <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </Reveal>
-          <Reveal>
-            <WorkList items={selectedWork} />
-          </Reveal>
-          <Reveal>
-            <p className="mt-8 text-dim">
-              + twelve more, from a LibreOffice HWP module to a Rust lottery backend holding 100k
-              concurrent buyers —{' '}
-              <Link href="/projects" className="font-medium text-gold hover:text-gold-bright">
-                all projects →
-              </Link>
-            </p>
-          </Reveal>
+          <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((project) => (
+              <StaggerItem key={project.title} className="h-full">
+                <FeaturedCard project={project} />
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
 
       {/* ================= STORY BAND ================= */}
-      <section className="border-y border-line bg-background-2 py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.25fr_0.75fr] lg:px-10">
+      <section className="border-y border-line bg-background-2 py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10">
           <Reveal>
             <p className="eyebrow">The story · 23 paragraphs</p>
-            <p className="mt-5 text-2xl font-medium leading-normal tracking-tight text-balance sm:text-3xl">
-              “Born a year before the release of Windows 95, I can&apos;t quite pinpoint when my
-              fascination with computers began.{' '}
-              <span className="text-gold">It just always seemed to be there.</span>”
+            <p className="display mt-5 text-3xl sm:text-4xl">
+              “I dive headfirst into any software challenge, whether it pays or not,{' '}
+              <span className="text-grad">just because I love it.</span>”
             </p>
-            <Link
-              href="/story"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-dim transition-colors hover:border-faint hover:text-foreground"
-            >
+            <Link href="/story" className="btn-primary mt-8">
               Read all of it — 12 min <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="font-mono text-[0.8rem] leading-[2.1] text-dim">
+            <div className="relative border-l border-line pl-8">
               {storyMoments.map((m) => (
-                <div key={m.year + m.text}>
-                  <span className="text-gold">{m.year}</span> — {m.text}
+                <div key={m.year} className="relative pb-7 last:pb-0">
+                  <span className="absolute -left-[2.15rem] top-1.5 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-grad-1 to-grad-3" />
+                  <p className="font-mono text-xs tracking-widest text-accent">{m.year}</p>
+                  <p className="mt-1 text-[0.95rem] text-dim">{m.text}</p>
                 </div>
               ))}
             </div>
@@ -168,40 +179,34 @@ export default function Home() {
       </section>
 
       {/* ================= EXPERIENCE ================= */}
-      <section className="py-28">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
             <div className="mb-12">
               <p className="eyebrow">Experience</p>
-              <h2 className="display mt-2 text-3xl sm:text-5xl">Five chapters of it.</h2>
+              <h2 className="display mt-3 text-4xl sm:text-6xl">Five chapters of it.</h2>
             </div>
           </Reveal>
-          <Reveal>
-            <div className="border-t border-line">
-              {experiences
-                .slice()
-                .reverse()
-                .map((xp) => (
-                  <div
-                    key={xp.title + xp.period}
-                    className="grid gap-2 border-b border-line px-1 py-8 sm:grid-cols-[11rem_1fr] sm:gap-8"
-                  >
-                    <span className="mono-label pt-1.5">{xp.period}</span>
+          <Stagger className="space-y-4">
+            {experiences
+              .slice()
+              .reverse()
+              .map((xp) => (
+                <StaggerItem key={xp.title + xp.period}>
+                  <div className="gcard grid gap-3 p-7 sm:grid-cols-[12rem_1fr] sm:gap-8">
+                    <span className="mono-label pt-1.5 text-accent">{xp.period}</span>
                     <div>
                       <h3 className="text-lg font-semibold">
-                        {xp.title} <span className="font-medium text-gold">· {xp.company}</span>
+                        {xp.title} <span className="text-grad">· {xp.company}</span>
                       </h3>
-                      <p className="mt-2 max-w-[64ch] leading-relaxed text-dim">{xp.description}</p>
+                      <p className="mt-2 max-w-[70ch] leading-relaxed text-dim">{xp.description}</p>
                     </div>
                   </div>
-                ))}
-            </div>
-          </Reveal>
+                </StaggerItem>
+              ))}
+          </Stagger>
           <Reveal>
-            <Link
-              href="/resume"
-              className="mt-8 inline-flex items-center gap-2 font-medium text-gold hover:text-gold-bright"
-            >
+            <Link href="/resume" className="mt-8 inline-flex items-center gap-2 font-medium text-accent hover:text-accent-bright">
               Full resume with details <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
@@ -209,12 +214,12 @@ export default function Home() {
       </section>
 
       {/* ================= TESTIMONIALS ================= */}
-      <section className="pb-28">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="border-t border-line bg-background-2 py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="eyebrow">What colleagues say</p>
-              <p className="mt-6 text-2xl font-medium leading-normal tracking-tight text-balance sm:text-3xl">
+            <div className="mx-auto max-w-4xl text-center">
+              <Sparkles className="mx-auto h-7 w-7 text-accent" />
+              <p className="display mt-6 text-2xl sm:text-4xl">
                 “{testimonials[0].quote}”
               </p>
               <p className="mono-label mt-7">
@@ -222,65 +227,42 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <Reveal>
-            <div className="mt-16 grid gap-10 border-t border-line pt-12 sm:grid-cols-2">
-              {testimonials.slice(1).map((t) => (
-                <figure key={t.role}>
+          <Stagger className="mt-16 grid gap-6 sm:grid-cols-2">
+            {testimonials.slice(1).map((t) => (
+              <StaggerItem key={t.role}>
+                <figure className="gcard h-full p-7">
                   <blockquote className="leading-relaxed text-dim">“{t.quote}”</blockquote>
-                  <figcaption className="mono-label mt-4">
+                  <figcaption className="mono-label mt-5">
                     {t.author} — {t.role}
                   </figcaption>
                 </figure>
-              ))}
-            </div>
-          </Reveal>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
 
       {/* ================= EXPLORE ================= */}
-      <section className="border-t border-line py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal>
-            <div>
-              {exploreLinks.map((l, i) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="group grid grid-cols-[2.4rem_1fr_auto] items-baseline gap-4 border-b border-line px-1 py-6 transition-[padding,background-color] duration-300 first:border-t hover:bg-background-2 hover:pl-4"
-                >
-                  <span className="mono-label pt-1">0{i + 1}</span>
-                  <span>
-                    <span className="text-xl font-semibold tracking-tight transition-colors group-hover:text-gold">
-                      {l.title}
-                    </span>
-                    <span className="ml-4 hidden text-sm text-dim sm:inline">{l.note}</span>
+            <p className="eyebrow">Keep exploring</p>
+            <h2 className="display mt-3 mb-10 text-3xl sm:text-5xl">More of the story.</h2>
+          </Reveal>
+          <Stagger className="grid gap-4 sm:grid-cols-3">
+            {exploreLinks.map((l, i) => (
+              <StaggerItem key={l.href}>
+                <Link href={l.href} className="gcard group flex h-full flex-col p-7">
+                  <span className="mono-label text-accent">0{i + 1}</span>
+                  <span className="mt-4 flex items-center gap-2 text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+                    {l.title}
+                    <ArrowUpRight className="h-5 w-5 text-faint transition-colors group-hover:text-accent" />
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-faint transition-colors group-hover:text-gold" />
+                  <span className="mt-2 text-sm text-dim">{l.note}</span>
                 </Link>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ================= CONTACT CTA ================= */}
-      <section className="border-t border-line bg-background-2 py-28">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <Reveal>
-            <p className="eyebrow">Contact</p>
-            <h2 className="display mt-3 text-4xl sm:text-6xl lg:text-7xl">
-              Have a problem nobody
-              <br />
-              else can figure out?
-            </h2>
-            <a
-              href={`mailto:${SITE_CONFIG.email}`}
-              className="mt-10 inline-block border-b-2 border-gold pb-1 text-xl font-semibold tracking-tight transition-colors hover:text-gold sm:text-3xl"
-            >
-              {SITE_CONFIG.email}
-            </a>
-            <p className="mt-5 text-sm text-dim">Usually responds within two hours. Seriously.</p>
-          </Reveal>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </section>
     </>
