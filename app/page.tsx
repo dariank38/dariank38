@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowDown, ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Sparkles, Star, Zap } from 'lucide-react'
 import { Orb } from '@/components/orb'
 import { Portrait } from '@/components/portrait'
 import { Reveal, MountReveal, Stagger, StaggerItem, Counter, Marquee } from '@/components/fx'
@@ -42,44 +42,66 @@ export default function Home() {
         <div className="bg-grid absolute inset-0 opacity-60" aria-hidden />
         <Orb />
         <div className="hero-fade pointer-events-none absolute inset-0" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-20 sm:px-8 lg:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 sm:px-8 lg:px-10">
           <MountReveal>
-            <div className="flex items-center gap-4">
-              <Portrait size={52} priority />
+            <div className="flex flex-wrap items-center gap-3">
+              <Portrait size={48} priority />
               <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel/60 px-4 py-2 font-mono text-[0.72rem] tracking-[0.14em] text-dim backdrop-blur">
                 <i className="status-dot" />
                 AVAILABLE FOR NEW OPPORTUNITIES
               </span>
+              <span className="hidden items-center gap-2 rounded-full border border-line bg-panel/60 px-4 py-2 font-mono text-[0.72rem] tracking-[0.14em] text-dim backdrop-blur sm:inline-flex">
+                <Star className="h-3 w-3 fill-accent text-accent" />
+                10+ YEARS · {projectHighlights.length} PRODUCTS SHIPPED
+              </span>
             </div>
           </MountReveal>
-          <MountReveal delay={0.08}>
-            <h1 className="display mt-8 text-6xl sm:text-8xl lg:text-[8.5rem]">
+          <MountReveal delay={0.06}>
+            <p className="eyebrow mt-9">Senior Software Engineer — AI · Full-Stack · Windows</p>
+          </MountReveal>
+          <MountReveal delay={0.12}>
+            <h1 className="display mt-4 text-6xl sm:text-8xl lg:text-[8.25rem]">
               <span className="text-grad">Darian King</span>
             </h1>
           </MountReveal>
-          <MountReveal delay={0.16}>
-            <p className="display mt-1 text-3xl text-foreground/90 sm:text-5xl lg:text-6xl">
-              builds what others call impossible.
+          <MountReveal delay={0.18}>
+            <p className="display mt-1 text-4xl text-foreground sm:text-6xl lg:text-[4.5rem]">
+              builds what others <span className="text-grad">call impossible.</span>
             </p>
           </MountReveal>
           <MountReveal delay={0.24}>
-            <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-dim">
+            <p className="mt-7 max-w-[48ch] text-lg leading-relaxed text-dim">
               Software engineer since before it was a job —{' '}
               <span className="font-semibold text-foreground">
                 Windows internals to multi-model AI pipelines
               </span>
-              , with payments platforms, 280-camera vision systems, and{' '}
+              , with payments platforms, e-commerce at scale, and{' '}
               <span className="font-semibold text-foreground">{projectHighlights.length} shipped products</span>{' '}
               in between.
             </p>
           </MountReveal>
-          <MountReveal delay={0.32}>
+          <MountReveal delay={0.30}>
+            <div className="mt-7 flex flex-wrap gap-2.5">
+              {['Alipay-scale payments', 'Multi-model AI pipelines', 'Web3 & blockchain', 'Windows internals'].map(
+                (chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-[0.8rem] text-dim"
+                  >
+                    <Zap className="h-3 w-3 text-accent" />
+                    {chip}
+                  </span>
+                )
+              )}
+            </div>
+          </MountReveal>
+          <MountReveal delay={0.36}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link href="/projects" className="btn-primary">
-                View the work <ArrowDown className="h-4 w-4" />
+                See the work <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/story" className="btn-ghost">
-                Read the story
+              <Link href="/contact" className="btn-ghost">
+                Let&apos;s talk
               </Link>
             </div>
           </MountReveal>
@@ -108,7 +130,7 @@ export default function Home() {
               { value: 10, suffix: '+', label: 'years professional' },
               { value: projectHighlights.length, suffix: '', label: 'products shipped' },
               { value: technologiesCount, suffix: '', label: 'technologies' },
-              { value: 280, suffix: '', label: 'cameras, one gate' },
+              { value: 100, suffix: 'K+', label: 'concurrent users handled' },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
                 <div className="gcard flex h-full flex-col items-center justify-center px-4 py-9 text-center">
