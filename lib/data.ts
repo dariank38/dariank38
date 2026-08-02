@@ -159,7 +159,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'LLM Orchestration & Search',
-    skills: ['LangChain', 'LlamaIndex', 'Pinecone', 'Weaviate', 'Chroma', 'Embedding Pipelines'],
+    skills: ['LangChain', 'LlamaIndex', 'Pinecone', 'Weaviate', 'Chroma', 'Elasticsearch', 'Embedding Pipelines', 'n8n'],
   },
   {
     category: 'ML Engineering',
@@ -167,7 +167,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Backend',
-    skills: ['Python', 'Node.js', 'Django', 'Flask', 'FastAPI', 'Web2Py', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java', 'Rust', 'WordPress', 'Wix', 'Shopify', 'Ruby', 'Liquid'],
+    skills: ['Python', 'Node.js', 'Django', 'Flask', 'FastAPI', 'Web2Py', 'REST / GraphQL', 'ASP.NET', 'PHP', 'Java', 'Rust', 'WordPress', 'Wix', 'Shopify', 'Ruby', 'Liquid', 'Twilio'],
   },
   {
     category: 'Frontend',
