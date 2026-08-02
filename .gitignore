@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# unrelated local projects (not part of the website)
+/CaptureGuard
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
