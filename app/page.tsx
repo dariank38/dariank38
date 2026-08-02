@@ -130,7 +130,7 @@ export default function Home() {
               { value: 10, suffix: '+', label: 'years professional' },
               { value: projectHighlights.length, suffix: '', label: 'products shipped' },
               { value: technologiesCount, suffix: '', label: 'technologies' },
-              { value: 100, suffix: 'K+', label: 'concurrent users handled' },
+              { value: 15, suffix: '+', label: 'programming languages' },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
                 <div className="gcard flex h-full flex-col items-center justify-center px-4 py-9 text-center">
